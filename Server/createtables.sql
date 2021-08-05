@@ -1,10 +1,12 @@
+SET character_set_client = utf8;
+
 CREATE TABLE `userinfo` (
   `userid` varchar(20) NOT NULL,
   `password` varchar(100) NOT NULL,
   `email` varchar(100) DEFAULT NULL,
   `balance` int DEFAULT NULL,
   PRIMARY KEY (`userid`)
-) ;
+)ENGINE = InnoDB DEFAULT CHARSET = utf8 COLLATE = utf8_general_ci;
 
 
 CREATE TABLE `movieset` (
@@ -17,7 +19,7 @@ CREATE TABLE `movieset` (
   `type` varchar(20) DEFAULT NULL,
   `grade` float DEFAULT NULL,
   PRIMARY KEY (`id`,`mv_name`)
-);
+)ENGINE = InnoDB DEFAULT CHARSET = utf8 COLLATE = utf8_general_ci;
 
 CREATE TABLE `cinema_info` (
   `cinema_id` int NOT NULL AUTO_INCREMENT,
@@ -25,7 +27,7 @@ CREATE TABLE `cinema_info` (
   `cinema_loc` varchar(20) DEFAULT NULL,
   `cinema_discrip` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`cinema_id`,`cinema_name`)
-);
+)ENGINE = InnoDB DEFAULT CHARSET = utf8 COLLATE = utf8_general_ci;
 
 CREATE TABLE `cinema_hall` (
   `cinema_id` int NOT NULL,
@@ -35,7 +37,7 @@ CREATE TABLE `cinema_hall` (
   `seat_col` int NOT NULL,
   PRIMARY KEY (`cinema_id`,`hall_id	`),
   FOREIGN KEY(cinema_id) REFERENCES cinema_info(cinema_id)
-);
+)ENGINE = InnoDB DEFAULT CHARSET = utf8 COLLATE = utf8_general_ci;
 
 CREATE TABLE `hall`(
   `cinema_id` int NOT NULL,
@@ -45,4 +47,4 @@ CREATE TABLE `hall`(
   end_time DATETIME NOT NULL,
   FOREIGN KEY(cinema_id,hall_id) REFERENCES cinema_hall(cinema_id,hall_id),
   FOREIGN KEY(mv_name) REFERENCES movieset(mv_name)
-);
+)ENGINE = InnoDB DEFAULT CHARSET = utf8 COLLATE = utf8_general_ci;

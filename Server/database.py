@@ -3,7 +3,7 @@ import mysql.connector
 from werkzeug.security import generate_password_hash, check_password_hash
 
 
-conn = mysql.connector.connect(host=db['host'], user=db['user'], passwd=db['passwd'], database=db['database'], charset='utf8mb4')
+conn = mysql.connector.connect(host=db['host'], user=db['user'], passwd=db['passwd'], database=db['database'], charset='utf8')
 db=conn.cursor()
 def findUser(userid):
     db.execute('select * from userinfo where `userid`=%s', (userid))
@@ -20,7 +20,7 @@ def userLogin(userid, password):
 
 def createUser(userid, password,email,balance):
     password = encrypt(password)
-    db.execute('insert into userinfo (`userid`, `password`,`email`,`balance`) values (%s, %s, %s, %s)', (userinfo, password,email,balance))
+    db.execute('insert into userinfo (`userid`, `password`,`email`,`balance`) values (%s, %s, %s, %s)', (userid, password,email,balance))
     conn.commit()
     return db.rowcount
 

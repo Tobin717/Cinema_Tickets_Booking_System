@@ -7,7 +7,7 @@ app = Flask(__name__)
 
 @app.route('/login',methods = ['POST'])
 def login():
-	user = request.form['userid']
+	userid = request.form['userid']
 	password = request.form['password']
 	result = userLogin(userid,password)
 	if result:
@@ -19,7 +19,7 @@ def login():
    
 @app.route('/regist', methods=['POST'])
 def register():
-    user = request.form['userid']
+    userid = request.form['userid']
     password = request.form['password']
     email = request.form['email']
     result = findUser(userid)
@@ -29,7 +29,7 @@ def register():
             'errmsg': '该用户名已被注册'
         }
     
-    rowcount = createUser(username, password,email,0)
+    rowcount = createUser(userid, password,email,0)
     if rowcount > 0:
         return {
             'errcode': 0,
@@ -42,4 +42,4 @@ def register():
     }
 
 if __name__ == '__main__':
-   app.run(debug = True)
+   app.run()
