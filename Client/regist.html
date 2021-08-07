@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,29 +9,31 @@
     <link rel="stylesheet" type="text/css" href="css/log_in.css">
     <script src="js/regist.js"></script>
 </head>
+
 <body>
     <div class="background">
         <div class="middle">
             <div class="logo"></div>
             <div class="login_back">
                 <div class="logo_next">注册</div>
-                <form class="input" id="form1" action="http://119.23.45.53:8080/regist" method="POST">
+                <div class="input">
                     账号<br>
-                    <input id="username" name="userid" type="text" maxlength="20" autofocus>
+                    <input id="username" type="text" maxlength="20" autofocus autocomplete="off">
                     <br><br>
                     邮箱<br>
-                    <input id="email" name="email" type="email" maxlength="100">
+                    <input id="email" type="email" maxlength="100">
                     <br><br>
                     密码<br>
-                    <input id="password" name="password" type="password" maxlength="20">
+                    <input id="password" type="password" maxlength="20">
                     <br><br>
                     确认密码<br>
                     <input id="password_2" type="password" maxlength="20">
                     <br><br>
                     <button class="button_login" onclick="send_user_regist()">注册</button>
-                </form>
+                </div>
             </div>
         </div>
     </div>
 </body>
+
 </html>
