@@ -19,3 +19,12 @@ function checkCookie() {
         user_info.innerText = "欢迎，用户" + username;
     }
 }
+function checkCookie_user() {
+    var username = getCookie("username");
+    if (username == "") {
+        location.href = "log_in.html";
+    } else {
+        var user_info = document.getElementById("user_info");
+        user_info.innerText = "欢迎，用户" + username;
+    }
+}

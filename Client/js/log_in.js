@@ -26,7 +26,7 @@ function send_user_login() {
             alert(xhr.response.errmsg);
             if (xhr.response.errcode === 0) {
                 setCookie("username", username.value);
-                setCookie("SameSite","Lax");
+                setCookie("SameSite", "Lax");
                 location.href = "homepage.html";
             } else {
                 username.value = "";
