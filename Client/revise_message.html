@@ -6,9 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>mymessage</title>
-    <link rel="stylesheet" tyle=text/css href="./css/revise_message.css">
+    <link rel="stylesheet" tyle=text/css href="css/revise_message.css">
+    <link rel="stylesheet" tyle=text/css href="css/all.css">
 </head>
-<body>
+
+<body onload="checkCookie()">
     <div class="header">
         <div class="head_inner">
             <a class="logo" href="homepage.html"></a>
@@ -33,25 +35,27 @@
             </div>
         </div>
     </div>
-  </body>
+</body>
+
 <body>
-  <div class="container">
-      <div class="box1">
-          <label for="label1">请输入您的昵称</label>
-          <textarea name="nickname" rows=1px cols=20px ></textarea>
-          <br><br>
-          <label for="label2">请输入您的新密码</label>
-          <textarea name="account" rows=1px cols=20px ></textarea>
-          <br><br>
-          <label for="label3">请重复您的密码</label>
-          <textarea name="password" rows=1px cols=20px ></textarea>
-          <br><br>
-          <label for="label4">请输入您的邮箱</label>
-          <textarea name="email" rows=1px cols=20px></textarea>
-          <br><br>
-          <button name="revise">返回个人信息</button>
-      </div>
-  </div>
+    <div class="container">
+        <div class="box1">
+            <label for="label1">请输入您的昵称</label>
+            <textarea name="nickname" rows=1px cols=20px></textarea>
+            <br><br>
+            <label for="label2">请输入您的新密码</label>
+            <textarea name="account" rows=1px cols=20px></textarea>
+            <br><br>
+            <label for="label3">请重复您的密码</label>
+            <textarea name="password" rows=1px cols=20px></textarea>
+            <br><br>
+            <label for="label4">请输入您的邮箱</label>
+            <textarea name="email" rows=1px cols=20px></textarea>
+            <br><br>
+            <button name="revise">返回个人信息</button>
+        </div>
+    </div>
 
 </body>
+
 </html>

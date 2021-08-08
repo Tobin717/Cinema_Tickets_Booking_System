@@ -6,8 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>mymessage</title>
-    <link rel="stylesheet" tyle=text/css href="./css/mymessage.css">
+    <link rel="stylesheet" tyle=text/css href="css/mymessage.css">
+    <link rel="stylesheet" tyle=text/css href="css/all.css">
 </head>
+
 <body>
     <div class="header">
         <div class="head_inner">
@@ -33,28 +35,30 @@
             </div>
         </div>
     </div>
-  </body>
-<body>
-  <div class="container">
-      <div class="box1">
-          <label for="label1">昵称</label>
-          <textarea name="nickname" rows=1px cols=20px readonly="readonly"></textarea>
-          <br><br>
-          <label for="label2">账号</label>
-          <textarea name="account" rows=1px cols=20px readonly="readonly"></textarea>
-          <br><br>
-          <label for="label3">密码</label>
-          <textarea name="password" rows=1px cols=20px readonly="readonly"></textarea>
-          <br><br>
-          <label for="label4">邮箱</label>
-          <textarea name="email" rows=1px cols=20px readonly="readonly"></textarea>
-          <br><br>
-          <button name="revise">修改个人信息</button>
-          <br><br>
-          <button name="logout">退出登录</button>
+</body>
 
-      </div>
-  </div>
+<body onload="checkCookie()">
+    <div class="container">
+        <div class="box1">
+            <label for="label1">昵称</label>
+            <textarea name="nickname" rows=1px cols=20px readonly="readonly"></textarea>
+            <br><br>
+            <label for="label2">账号</label>
+            <textarea name="account" rows=1px cols=20px readonly="readonly"></textarea>
+            <br><br>
+            <label for="label3">密码</label>
+            <textarea name="password" rows=1px cols=20px readonly="readonly"></textarea>
+            <br><br>
+            <label for="label4">邮箱</label>
+            <textarea name="email" rows=1px cols=20px readonly="readonly"></textarea>
+            <br><br>
+            <a name="revise" href="revise_message.html"><input type="button" value="修改个人信息"></a>
+            <br><br>
+            <a name="logout"><input type="button" value="退出登录"></a>
+
+        </div>
+    </div>
 
 </body>
+
 </html>
