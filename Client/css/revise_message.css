@@ -1,0 +1,36 @@
+a{text-decoration:none;}
+li{list-style: none;}
+body{font:14px 'Microsoft YaHei';color: black;}
+ul{padding: 0px;margin: 0px;border: 0px;}
+
+.header{height: 80px;width: 100%;min-width: 1200px;}
+.head_inner{height: 80px;width: 1200px;margin: auto;}
+.logo{float: left;background: url(../img/logo.png);width: 133px;height: 80px;}
+.navigation ul li{float: left;}
+.navigation ul li a{text-align: center;display: inline-block;line-height: 80px;width: 140px;font-size: 24px;color: black;}
+.log_in{float: right;line-height: 80px;text-align: right;width: 170px;font-size: 18px;color: black;background: url(../img/unlog.png)no-repeat;}
+.container{
+    width:1000px;
+    margin:auto;
+}
+.box1{
+    background-color: antiquewhite;
+    border:10px;
+    border-style:inset;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    text-align: center;
+}
+button{
+    background-color: lightskyblue;
+    height:50px;
+    width:100px;
+    color:black;
+    border:1px;
+    border-radius:5px;
+    border-style:outset;
+}
+button:hover{
+    color:red;
+    font-weight:bold;
+}
