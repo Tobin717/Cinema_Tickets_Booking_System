@@ -1,66 +1,61 @@
-.header {
-    width: 1000px;
+.header{
+    width:1000px;
     margin: auto;
 }
-
-.container {
+.container{
     background-color: antiquewhite;
 }
-
-h1 {
+h1{
     text-align: center;
     letter-spacing: 1em;
 }
-
-.box1 {
-    width: 1000px;
+.box1{
+    width:1000px;
     margin: auto;
 }
-
-.box2 {
+.box2{
     background-color: lightblue;
-    border: 2px;
-    border-color: blue;
-    border-style: solid;
+    border:2px;
+    border-color:blue;
+    border-style:solid;
 }
-
-.box2 h3 {
+.box2 h3{
     text-indent: 2em;
 }
-
-.left {
-    width: 70%;
-    height: 600px;
-    background-color: lightskyblue;
-    float: left;
-    margin-top: 1em;
+.left{
+    width:70%;
+    height:600px;
+    background-color:lightskyblue;
+    float:left;
+    margin-top:1em;
 }
+.right{
+    width:30%;
+    height:600px;
+    float:right;
+    margin-top:1em;
+    background-color:mediumturquoise;
 
-.right {
-    width: 30%;
-    height: 600px;
-    float: right;
-    margin-top: 1em;
-    background-color: mediumturquoise;
 }
-
-input {
-    margin-left: 50px;
+input{
+   margin-left:50px;
 }
-
-button {
+button{
     background-color: antiquewhite;
-    height: 50px;
-    width: 100px;
-    color: black;
-    border: 1px;
-    border-radius: 5px;
-    border-style: outset;
-    margin-left: 75px;
-    margin-top: 20px;
+    height:50px;
+    width:100px;
+    color:black;
+    border:1px;
+    border-radius:5px;
+    border-style:outset;
+    margin-left:75px;
+    margin-top:20px;
 }
-
-button:hover {
-    color: red;
-    font-weight: bold;
+button:hover{
+    color:red;
+    font-weight:bold;
+}
+select{
+    background-color: antiquewhite;
+    margin-left:200px;
 }
