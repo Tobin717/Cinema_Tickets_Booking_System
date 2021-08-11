@@ -1,0 +1,26 @@
+.header{
+    width:1000px;
+    margin: auto;
+    background-color: antiquewhite;
+    letter-spacing: 1em;
+    text-align: center;
+}
+.Box{
+    width: 1000px;
+    margin: auto;
+    background-color:lightgrey;
+}
+.box1{
+    text-align:center;
+}
+a{text-decoration:none;}
+li{list-style: none;}
+.box1 button{
+    width:50px;height:25px
+}
+.box1 button:hover{
+    background-color:red;
+}
+.box1 button{
+    background-color: white;
+}
