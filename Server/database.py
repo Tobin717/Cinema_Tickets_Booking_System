@@ -6,12 +6,12 @@ from werkzeug.security import generate_password_hash, check_password_hash
 conn = mysql.connector.connect(host=db['host'], user=db['user'], passwd=db['passwd'], database=db['database'], charset='utf8')
 db=conn.cursor()
 def findUser(userid):
-    db.execute('select * from userinfo where `userid`=%s', (userid))
+    db.execute('select * from userinfo where `userid`=%s', (userid,))
     result = db.fetchone()
     return result
 
 def userLogin(userid, password):
-    db.execute('select * from userinfo where `userid`=%s', (userid))
+    db.execute('select * from userinfo where `userid`=%s', (userid,))
     result = db.fetchone()
     if result:
         if checkPwd(password, result[1]):

@@ -1,7 +1,7 @@
 db = {
 	'host':'localhost',
-    'database': 'scut709',
-    'user': 'cineme',
+    'database': 'test',
+    'user': 'cinema',
     'passwd': 'ScutDataBase709.'
 }
 
