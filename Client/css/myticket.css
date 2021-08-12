@@ -1,86 +1,86 @@
-a{text-decoration:none;}
-li{list-style: none;}
-body{font:14px 'Microsoft YaHei';color: black;}
-ul{padding: 0px;margin: 0px;border: 0px;}
-
-.header{height: 80px;width: 100%;min-width: 1200px;}
-.head_inner{height: 80px;width: 1200px;margin: auto;}
-.logo{float: left;background: url(../img/logo.png);width: 133px;height: 80px;}
-.navigation ul li{float: left;}
-.navigation ul li a{text-align: center;display: inline-block;line-height: 80px;width: 140px;font-size: 24px;color: black;}
-.log_in{float: right;line-height: 80px;text-align: right;width: 170px;font-size: 18px;color: black;background: url(../img/unlog.png)no-repeat;}
-
-.header{
-    width:1000px;
+.header {
+    width: 1000px;
     margin: auto;
 }
-.container{
+
+.container {
     background-color: antiquewhite;
 }
-h1{
+
+h1 {
     text-align: center;
     letter-spacing: 1em;
 }
-.box1{
-    width:1000px;
+
+.box1 {
+    width: 1000px;
     margin: auto;
 }
-.box2{
+
+.box2 {
     background-color: lightblue;
-    border:2px;
-    border-color:blue;
-    border-style:solid;
+    border: 2px;
+    border-color: blue;
+    border-style: solid;
 }
-.box2 h3{
+
+.box2 h3 {
     text-indent: 2em;
 }
-.left{
-    width:85%;
-    height:800px;
-    background-color:lightskyblue;
-    float:left;
-    margin-top:1em;
-}
-.right{
-    width:15%;
-    height:800px;
-    float:right;
-    margin-top:1em;
-    background-color:mediumturquoise;
 
-}
-input{
-   margin-left:50px;
-}
-button{
-    background-color:deepskyblue;
-    height:30px;
-    width:100px;
-    color:black;
-    border:1px;
-    border-radius:5px;
-    border-style:outset;
-    margin-left:75px;
-    margin-top:20px;
-}
-button:hover{
-    color:red;
-    font-weight:bold;
+.left {
+    width: 85%;
+    height: 800px;
+    background-color: lightskyblue;
+    float: left;
+    margin-top: 1em;
 }
 
-table{
-    width:800px;
-    height:600px;
+.right {
+    width: 15%;
+    height: 800px;
+    float: right;
+    margin-top: 1em;
+    background-color: mediumturquoise;
+}
+
+input {
+    margin-left: 50px;
+}
+
+button {
+    background-color: deepskyblue;
+    height: 30px;
+    width: 100px;
+    color: black;
+    border: 1px;
+    border-radius: 5px;
+    border-style: outset;
+    margin-left: 75px;
+    margin-top: 20px;
+}
+
+button:hover {
+    color: red;
+    font-weight: bold;
+}
+
+table {
+    width: 800px;
+    height: 600px;
     background-color: white;
-    margin:auto;
+    margin: auto;
 }
-li{
+
+li {
     list-style: none;
 }
-.right a{
-text-decoration: none;
-color:firebrick;
+
+.right a {
+    text-decoration: none;
+    color: firebrick;
 }
-.right a:hover{
-    color:greenyellow;
+
+.right a:hover {
+    color: greenyellow;
 }
