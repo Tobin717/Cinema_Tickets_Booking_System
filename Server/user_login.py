@@ -1,5 +1,5 @@
 from flask import Flask, redirect, url_for, request
-from database import userLogin,createUser,findUser
+from database import userLogin,createUser,findUser,getMvRank
 from flask_cors import *
 
 
@@ -40,19 +40,29 @@ def register():
         return {
             'errcode': 1,
             'errmsg': '该用户名已被注册'
-        }
+        },400
     
     rowcount = createUser(userid, password,email,0)
     if rowcount > 0:
         return {
             'errcode': 0,
             'errmsg': '注册成功'
-        }
+        },200
     
     return {
         'errcode': 1,
         'errmsg': '出现错误~请重试'
-    }
+    },400
+
+@app.route('/getMvRank',methods=['POST'])
+def getRank():
+	if request.headers['Content-Type'] == 'application/json':
+		number=request.get_json()['number']
+		result=getMvRank(number)
+		return result,200,{"ContentType":"application/json"}
+	else:
+		return 400
+
 
 if __name__ == '__main__':
    app.run()

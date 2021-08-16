@@ -24,8 +24,10 @@ def createUser(userid, password,email,balance):
     conn.commit()
     return db.rowcount
 
-
-
+def getMvRank(number):
+	db.execute('SELECT id,mv_name,sale FROM movieset ORDER BY sale DESC LIMIT %s',(number,))
+	result=db.fetchall()
+	return result
 
 def encrypt(passwd):
     return generate_password_hash(passwd)
