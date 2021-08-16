@@ -59,9 +59,9 @@ def getRank():
 	if request.headers['Content-Type'] == 'application/json':
 		number=request.get_json()['number']
 		result=getMvRank(number)
-		return result,200,{"ContentType":"application/json"}
+		return result,200
 	else:
-		return 400
+		return null,400
 
 
 if __name__ == '__main__':
