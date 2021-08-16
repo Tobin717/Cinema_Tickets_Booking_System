@@ -1,7 +1,7 @@
 from flask import Flask, redirect, url_for, request
 from database import userLogin,createUser,findUser,getMvRank
 from flask_cors import *
-
+import json
 
 app = Flask(__name__)
 CORS(app,supports_credentials=True)
@@ -56,12 +56,13 @@ def register():
 
 @app.route('/getMvRank',methods=['POST'])
 def getRank():
-	if request.headers['Content-Type'] == 'application/json':
+	print("getMvRank request accepted!")
+	if request.headers['Content-Type'] == "application/json":
 		number=request.get_json()['number']
 		result=getMvRank(number)
-		return result,200
+		return json.dumps(result),200
 	else:
-		return null,400
+		return 400
 
 
 if __name__ == '__main__':
