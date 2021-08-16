@@ -15,9 +15,17 @@ CORS(app,supports_credentials=True)
 @app.route('/login',methods = ['POST'])
 def login():
 	print("login request accpted!")
-	userid = request.form['userid']
-	password = request.form['password']
+	if request.headers['Content-Type'] == "application/json":
+		print("its json")
+		data = request.get_json()
+		userid = data['username']
+		password = data['password']
+	else:
+		print("its not json")
+		userid = request.form['userid']
+		password = request.form['password']
 	result = userLogin(userid,password)
+	print("userid is: ",userid)
 	if result:
 		print("login success!")
 		return {'errcode':0,
@@ -58,11 +66,13 @@ def register():
 def getRank():
 	print("getMvRank request accepted!")
 	if request.headers['Content-Type'] == "application/json":
+		print("its json!")
 		number=request.get_json()['number']
-		result=getMvRank(number)
+		print("number is :",number)
+		result={'rank':getMvRank(number)};
 		return json.dumps(result),200
 	else:
-		return 400
+		return json.dumps({'errmsg':"请求失败！"}),400
 
 
 if __name__ == '__main__':

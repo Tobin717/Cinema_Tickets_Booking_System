@@ -1,9 +1,10 @@
 from config import db
-import mysql.connector
+import pymysql
 from werkzeug.security import generate_password_hash, check_password_hash
 
 
-conn = mysql.connector.connect(host=db['host'], user=db['user'], passwd=db['passwd'], database=db['database'], charset='utf8')
+conn = pymysql.connect(host=db['host'], user=db['user'], passwd=db['passwd'], database=db['database'], charset='utf8',cursorclass = pymysql.cursors.DictCursor)
+cursor = conn.cursor()
 db=conn.cursor()
 def findUser(userid):
     db.execute('select * from userinfo where `userid`=%s', (userid,))
@@ -14,7 +15,7 @@ def userLogin(userid, password):
     db.execute('select * from userinfo where `userid`=%s', (userid,))
     result = db.fetchone()
     if result:
-        if checkPwd(password, result[1]):
+        if checkPwd(password, result['password']):
             return result
     return None
 
