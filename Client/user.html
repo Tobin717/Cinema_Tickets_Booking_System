@@ -8,9 +8,10 @@
     <title>person</title>
     <link rel="stylesheet" tyle=text/css href="css/person.css">
     <link rel="stylesheet" tyle=text/css href="css/all.css">
+    <script src="js/check_cookie.js"></script>
 </head>
 
-<body>
+<body onload="checkCookie_user()">
     <div class="header">
         <div class="head_inner">
             <a class="logo" href="homepage.html"></a>
@@ -31,13 +32,13 @@
                 </ul>
             </div>
             <div>
-                <a class="log_in" href="log_in">注册/登录</a>
+                <a class="log_in" id="user_info" href="log_in.html">注册/登录</a>
             </div>
         </div>
     </div>
 </body>
 
-<body>
+<body onload="checkCookie_user()">
 
     <div class="container">
         <div class="box1">
