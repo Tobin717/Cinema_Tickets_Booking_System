@@ -29,6 +29,19 @@ def getMvRank(number):
 	db.execute('SELECT id,mv_name,sale FROM movieset ORDER BY sale DESC LIMIT %s',(number,))
 	result=db.fetchall()
 	return result
+def changePwd(userid, oldpassword,newpassword):
+	if userLogin(userid,oldpassword):
+		password = encrypt(newpassword)
+		db.execute('UPDATE userinfo SET password=%s WHERE userid=%s',(password,userid))
+		conn.commit()
+		return db.rowcount
+	else:
+		return None
+def getUserEmail(userid):
+	db.execute('select email from userinfo where `userid`=%s', (userid,))
+	result = db.fetchone()
+	return result
+
 
 def encrypt(passwd):
     return generate_password_hash(passwd)
