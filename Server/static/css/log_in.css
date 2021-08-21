@@ -1,9 +1,0 @@
-body{font:14px 'Microsoft YaHei';}
-
-.background{width: 100%;height: 100%;position: fixed;background-color: cornflowerblue;}
-.middle{width: 30%;height: 50%;margin-left: auto;margin-right: auto;margin-top: 15%;background-color: cornsilk;}
-.logo{width: 133px;height: 80px;margin: auto;background: url(../img/logo.png)no-repeat;}
-.login_back{margin: auto;height: 80%;width: 80%;}
-.logo_next{width: 100%;height: 40px;font-size: 30px;font-weight: 700;}
-.input input{width: 60%;}
-.button_login{margin-left: 60%;height: 30px;width: 30%;}
