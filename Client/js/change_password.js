@@ -34,7 +34,7 @@ function change_password() {
     }
     xhr.open("post", "http://119.23.45.53:8080/changePwd", true);
     xhr.setRequestHeader("Content-Type", "application/json");
-    xhr.send("\{\"userid\":\"" + label1.value + "\",\"oldpassword\":\"" + label2.value + "\",\"newpassword\":\""+label3.value+"\"\}");
+    xhr.send("\{\"userid\":\"" + label1.value + "\",\"oldpassword\":\"" + label2.value + "\",\"newpassword\":\"" + label3.value + "\"\}");
     xhr.onreadystatechange = function () {
         if (xhr.readyState == 4) {
             if (xhr.response.errcode === 0) {

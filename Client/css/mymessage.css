@@ -13,12 +13,13 @@
 }
 
 input {
-    background-color: lightgray; 
+    background-color: lightgray;
 }
 
-.alllabel{
+.alllabel {
     background-color: antiquewhite;
 }
+
 button {
     background-color: lightskyblue;
     height: 50px;

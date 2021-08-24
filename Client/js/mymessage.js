@@ -2,7 +2,7 @@ function onload_mymessage() {
     checkCookie();
     var username = getCookie("username");
     var label1 = document.getElementById("label1");
-    label1.value=username;
+    label1.value = username;
     var label2 = document.getElementById("label2");
     var xhr = new XMLHttpRequest();
     xhr.responseType = "json";
@@ -16,7 +16,7 @@ function onload_mymessage() {
     xhr.onreadystatechange = function () {
         if (xhr.readyState == 4) {
             if (xhr.status === 200) {
-                label2.value=xhr.response.email;
+                label2.value = xhr.response.email;
             }
         }
     }
