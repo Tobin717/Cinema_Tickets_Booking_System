@@ -14,7 +14,7 @@ function send_user_regist() {
         password.focus();
         return false;
     }
-    if (password.value == "" || emreg.test(email.value) == false) {
+    if (email.value == "" || emreg.test(email.value) == false) {
         alert("请输入正确的邮箱");
         email.focus();
         return false;
