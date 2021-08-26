@@ -84,10 +84,13 @@ def modifyPwd():
 		userid = data['userid']
 		oldpassword = data['oldpassword']
 		newpassword = data['newpassword']
+		print("userid is:",userid)
 		result=changePwd(userid,oldpassword,newpassword)
 		if result:
+			print("修改成功！")
 			return {'errcode':0,'errmsg':"修改成功！"},200
 		else:
+			print("修改失败！")
 			return {'errcode':1,'errmsg':"修改失败，请重试！"},400
 	else:
 		return {'errcode':1,'errmsg':"参数错误"},400
