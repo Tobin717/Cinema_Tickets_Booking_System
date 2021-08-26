@@ -5,13 +5,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>mymessage</title>
+    <title>个人信息</title>
     <link rel="stylesheet" tyle=text/css href="css/mymessage.css">
     <link rel="stylesheet" tyle=text/css href="css/all.css">
     <script src="js/check_cookie.js"></script>
+    <script src="js/mymessage.js"></script>
 </head>
 
-<body onload="checkCookie()">
+<body onload="onload_mymessage()">
     <div class="header">
         <div class="head_inner">
             <a class="logo" href="homepage.html"></a>
@@ -41,22 +42,18 @@
 <body>
     <div class="container">
         <div class="box1">
-            <label for="label1">昵称</label>
-            <input name="nickname" rows=1px cols=20px readonly="readonly"></input>
+            <label for="label1">账号</label>
+            <input rows=1px cols=20px readonly="readonly" id="label1"></input>
             <br><br>
-            <label for="label2">账号</label>
-            <input name="account" rows=1px cols=20px readonly="readonly"></input>
+            <label for="label2">邮箱</label>
+            <input rows=1px cols=20px readonly="readonly" id="label2"></input>
             <br><br>
-            <label for="label4">邮箱</label>
-            <input name="email" rows=1px cols=20px readonly="readonly"></input>
+            <button onclick="(location.href='change_password.html')">修改个人信息</button>
             <br><br>
-            <button name="revise">修改个人信息</button>
-            <br><br>
-            <button name="logout">退出登录</button>
+            <button>退出登录</button>
 
         </div>
     </div>
-
 </body>
 
 </html>

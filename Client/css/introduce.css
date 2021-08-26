@@ -1,0 +1,21 @@
+.container1 {
+    background-color: blueviolet;
+    width: 1200px;
+    margin: auto;
+    border: 10px;
+    border-style: inset;
+}
+
+.container1 p {
+    color: greenyellow;
+}
+
+.container2 {
+    background-color: cornsilk;
+    width: 1200px;
+    margin-top: -15px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 10px;
+    border-style: outset;
+}

@@ -16,6 +16,10 @@ input {
     background-color: lightgray;
 }
 
+.alllabel {
+    background-color: antiquewhite;
+}
+
 button {
     background-color: lightskyblue;
     height: 50px;

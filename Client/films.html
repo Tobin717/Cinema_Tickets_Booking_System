@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>电影</title>
+    <link rel="stylesheet" tyle=text/css href="css/all.css">
+    <link rel="stylesheet" tyle=text/css href="css/films.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.7/css/swiper.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.4.1/js/swiper.min.js"></script>
+    <script src="js/check_cookie.js"></script>
+    <script src="js/films.js"></script>
+</head>
+
+<body onload="checkCookie()">
+    <div class="header">
+        <div class="head_inner">
+            <a class="logo" href="homepage.html"></a>
+            <div class="navigation">
+                <ul>
+                    <li>
+                        <a href="films.html">电影</a>
+                    </li>
+                    <li>
+                        <a href="cinemas.html">影院</a>
+                    </li>
+                    <li>
+                        <a href="aboutus.html">关于本站</a>
+                    </li>
+                    <li>
+                        <a href="user.html">个人中心</a>
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <a class="log_in" id="user_info" href="log_in.html">注册/登录</a>
+            </div>
+        </div>
+    </div>
+    <section class="swiper-container">
+        <div class="swiper-wrapper">
+
+            <div class="swiper-slide">
+                <img src="img/nuhuo.png" class="entity-img" />
+                <div class="content">
+                    <button onclick="location.href='introduce3.html'">了解详情</button>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <img src="img/shengxia.png" class="entity-img" />
+                <div class="content">
+                    <button onclick="location.href='introduce2.html'">了解详情</button>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <img src="img/zhongyi.png" class="entity-img" />
+                <div class="content">
+                    <button onclick="location.href='introduce4.html'">了解详情</button>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <img src="img/qingshe.png" class="entity-img" />
+                <div class="content">
+                    <button onclick="location.href='introduce1.html'">了解详情</button>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <script>
+        var sliderSelector = '.swiper-container',
+            options = {
+                init: false,
+                loop: true,
+                speed: 800,
+                slidesPerView: 3,
+                spaceBetween: 10,
+                centeredSlides: true,
+                effect: 'coverflow',
+                coverflowEffect: {
+                    rotate: 50,
+                    stretch: 0,
+                    depth: 0,
+                    modifier: 1,
+                    slideShadows: true,
+                },
+                grabCursor: true,
+                parallax: true,
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                },
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+                breakpoints: {
+                    1023: {
+                        slidesPerView: 1,
+                        spaceBetween: 0
+                    }
+                },
+                on: {
+                    imagesReady: function () {
+                        this.el.classList.remove('loading');
+                    }
+                }
+            };
+        var mySwiper = new Swiper(sliderSelector, options);
+        mySwiper.init();
+
+
+    </script>
+</body>
+
+</html>

@@ -1,27 +1,119 @@
-i{
+i {
     color: red;
     font-size: 24px;
     float: left;
 }
-.body{
+
+.body {
     width: 1000px;
     margin: auto;
 }
-.right{
+
+.right {
     width: 300px;
     float: right;
 }
-.link{
+
+.link {
     width: 300px;
     padding: 10px;
     background: transparent;
     border-width: 0px;
 }
-.link .span1_1{
+
+.link .span1_1 {
     font-size: 24px;
     float: left;
 }
-.link .span1_2{
+
+.link .span1_2 {
     font-size: 20px;
     float: right;
+}
+
+.left {
+    margin: 0px;
+    padding: 0px;
+}
+
+.left div {
+    overflow: hidden;
+    width: 600px;
+    height: 600px;
+    margin-left: 200px;
+    margin-top: 150px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+}
+
+.left img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-duration: 30s;
+}
+
+.c1 {
+    animation-name: roll1;
+}
+
+.c2 {
+    animation-name: roll2;
+}
+
+.c3 {
+    animation-name: roll3;
+}
+
+.c4 {
+    animation-name: roll4;
+}
+
+@keyframes roll1 {
+    0% {
+        left: 0px;
+        top: 0px;
+    }
+    100% {
+        left: -300%;
+        top: 0px;
+    }
+}
+
+@keyframes roll2 {
+    0% {
+        left: 100%;
+        top: 0px;
+    }
+    100% {
+        left: -200%;
+        top: 0px;
+    }
+}
+
+@keyframes roll3 {
+    0% {
+        left: 200%;
+        top: 0px;
+    }
+    100% {
+        left: -100%;
+        top: 0px;
+    }
+}
+
+@keyframes roll4 {
+    0% {
+        left: 300%;
+        top: 0px;
+    }
+    100% {
+        left: 0px;
+        top: 0px;
+    }
 }
