@@ -1,5 +1,5 @@
 from flask import Flask, redirect, url_for, request
-from database import userLogin,createUser,findUser,getMvRank,changePwd,getUserEmail,getUnavailableFilm,book,getUserTickets,refundUserTickets
+from database import userLogin,createUser,findUser,getMvRank,changePwd,getUserEmail,getUnavailableFilm,book,getUserTickets,refundUserTickets,charge
 from flask_cors import *
 import time
 import json
@@ -177,6 +177,19 @@ def refundTickets():
 	else:
 		return {'errcoe':1,'errmsg':"参数错误"},400
 
+@app.route('/userCharge',methods=['POST'])
+def userCharge():
+	if request.headers['Content-Type'] == "application/json":
+		data=request.get_json()
+		userid=data['userid']
+		amount=data['amount']
+		result=charge(userid,amount)
+		if result:
+			return {'errcoe':0,'errmsg':"成功"},200
+		else:
+			return {'errcoe':1,'errmsg':"失败"},400
+	else:
+		return {'errcoe':1,'errmsg':"参数错误"},400
 
 if __name__ == '__main__':
    app.run()

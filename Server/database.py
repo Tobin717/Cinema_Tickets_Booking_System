@@ -64,9 +64,27 @@ def getUserTickets(userid):
 	return result
 
 def refundUserTickets(userid,film_id,row,col):
-	db.execute('DELETE FROM tickets WHERE `userid`=%s and `film_id`=%s and `row`=%s and `col`=%s',(userid,film_id,row,col))
+	try:
+		db.execute('SELECT balance FROM userinfo WHERE `userid`=%s', (userid,))
+		balance=db.fetchone()['balance']
+		price=50
+		db.execute('UPDATE userinfo SET balance=%s WHERE userid=%s',(balance+price,userid))
+		db.execute('DELETE FROM tickets WHERE `userid`=%s and `film_id`=%s and `row`=%s and `col`=%s',(userid,film_id,row,col))
+	except Exception as e:
+		conn.rollback()
+	finally:
+		conn.commit()
+	return db.rowcount
+
+def charge(userid,amount):
+	db.execute('SELECT balance FROM userinfo WHERE `userid`=%s', (userid,))
+	balance=db.fetchone()['balance']
+	db.execute('UPDATE userinfo SET balance=%s WHERE userid=%s',((balance+amount),userid))
 	conn.commit()
-	return db.rowcount()
+	return db.rowcount
+
+
+
 def encrypt(passwd):
     return generate_password_hash(passwd)
 def checkPwd(pwd, hashedPwd):
