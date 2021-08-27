@@ -11,7 +11,7 @@
     <script src="js/check_cookie.js"></script>
 </head>
 
-<body onload="checkCookie()">
+<body onload="checkCookie_user()">
     <div class="header">
         <div class="head_inner">
             <a class="logo" href="homepage.html"></a>
@@ -25,6 +25,9 @@
                     </li>
                     <li>
                         <a href="aboutus.html">关于本站</a>
+                    </li>
+                    <li>
+                        <a href="buyticket.html">购票系统</a>
                     </li>
                     <li>
                         <a href="user.html">个人中心</a>
@@ -50,7 +53,6 @@
                 <hr>
                 <ul>
                     <li>
-                        <button name="buy">购买</button>
                         <button name="chongzhi">充值/余额查询</button>
                         <button name="search">搜索影片</button>
                         <input name="TextSearch" cols:20px rows:1px></input>
@@ -61,7 +63,7 @@
                     <p>相关信息
                     <p>
                         <hr>
-                    <table width="400" border="1">
+                    <table width="400" border="1" cellspacing="0">
                         <tr>
                             <th align="center">影院名称</th>
                             <th align="center">场厅名字</th>
@@ -69,24 +71,10 @@
                             <th align="center">开始时间</th>
                             <th align="center">价格</th>
                             <th align="center">剩余座位数</th>
+                            <th align="center">购买</th>
                         </tr>
                         <tr>
                             <td align="left">&nbsp;</td>
-                            <td align="left">&nbsp;</td>
-                            <td align="left">&nbsp;</td>
-                            <td align="left">&nbsp;</td>
-                            <td align="left">&nbsp;</td>
-                            <td align="left">&nbsp;</td>
-                        </tr>
-                        <tr>
-                            <td align="left">&nbsp;</td>
-                            <td align="left">&nbsp;</td>
-                            <td align="left">&nbsp;</td>
-                            <td align="left">&nbsp;</td>
-                            <td align="left">&nbsp;</td>
-                            <td align="left">&nbsp;</td>
-                        </tr>
-                        <tr>
                             <td align="left">&nbsp;</td>
                             <td align="left">&nbsp;</td>
                             <td align="left">&nbsp;</td>
@@ -101,6 +89,16 @@
                             <td align="left">&nbsp;</td>
                             <td align="left">&nbsp;</td>
                             <td align="left">&nbsp;</td>
+                            <td align="left">&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td align="left">&nbsp;</td>
+                            <td align="left">&nbsp;</td>
+                            <td align="left">&nbsp;</td>
+                            <td align="left">&nbsp;</td>
+                            <td align="left">&nbsp;</td>
+                            <td align="left">&nbsp;</td>
+                            <td align="left">&nbsp;</td>
                         </tr>
                         <tr>
                             <td align="left">&nbsp;</td>
@@ -109,8 +107,19 @@
                             <td align="left">&nbsp;</td>
                             <td align="left">&nbsp;</td>
                             <td align="left">&nbsp;</td>
+                            <td align="left">&nbsp;</td>
                         </tr>
                         <tr>
+                            <td align="left">&nbsp;</td>
+                            <td align="left">&nbsp;</td>
+                            <td align="left">&nbsp;</td>
+                            <td align="left">&nbsp;</td>
+                            <td align="left">&nbsp;</td>
+                            <td align="left">&nbsp;</td>
+                            <td align="left">&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td align="left">&nbsp;</td>
                             <td align="left">&nbsp;</td>
                             <td align="left">&nbsp;</td>
                             <td align="left">&nbsp;</td>
@@ -122,8 +131,6 @@
                 </div>
                 <div class="right">
                     <ul>
-                        <li><a href="hotmovie.html">热门影片</a></li>
-                        <hr>
                         <li><a href="myticket.html">我的购票信息</a></li>
                         <hr>
                         <li><a href="buyticket.html">场次信息</a></li>
