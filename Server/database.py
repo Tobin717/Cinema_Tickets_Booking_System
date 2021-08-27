@@ -42,7 +42,31 @@ def getUserEmail(userid):
 	result = db.fetchone()
 	return result
 
+def getUnavailableFilm(film_id):
+	db.execute('SELECT row,col FROM tickets WHERE film_id=%s',(film_id,))
+	result=db.fetchall()
+	return result
 
+def book(userid,film_id,seats,number):
+	try:
+		for i in range(0,number):
+			db.execute('insert into tickets (`film_id`,`userid`,`row`,`col`) values(%s,%s,%s,%s)',(film_id,userid,seats[i]['row'],seats[i]['col']))
+	except Exception as e:
+		conn.rollback()
+		print(e)
+	finally:
+		conn.commit()
+	return db.rowcount
+
+def getUserTickets(userid):
+	db.execute('select film_id,row,col from tickets where `userid`=%s', (userid,))
+	result=db.fetchall()
+	return result
+
+def refundUserTickets(userid,film_id,row,col):
+	db.execute('DELETE FROM tickets WHERE `userid`=%s and `film_id`=%s and `row`=%s and `col`=%s',(userid,film_id,row,col))
+	conn.commit()
+	return db.rowcount()
 def encrypt(passwd):
     return generate_password_hash(passwd)
 def checkPwd(pwd, hashedPwd):
