@@ -10,10 +10,15 @@
     width: 1000px;
     margin: auto;
     background-color: lightgrey;
+    text-align: center;
 }
 
 .box1 {
-    text-align: center;
+    text-align: auto;
+}
+
+ul {
+    padding: 0%;
 }
 
 a {
@@ -25,14 +30,15 @@ li {
 }
 
 .box1 button {
-    width: 50px;
-    height: 25px
-}
-
-.box1 button:hover {
-    background-color: red;
+    width: 33px;
+    height: 26px;
+    background-image: url(../img/index_uncon.png);
 }
 
 .box1 button {
     background-color: white;
+}
+
+.button_con {
+    float: left;
 }
