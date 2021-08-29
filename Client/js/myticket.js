@@ -52,7 +52,7 @@ function refund_ticket(number, row, col) {
         if (xhr.readyState == 4) {
             alert(xhr.response.errmsg);
             if (xhr.response.errcode == 0) {
-                location.href = "myticket.html";
+                location.href = "user.html";
             }
         }
     }
