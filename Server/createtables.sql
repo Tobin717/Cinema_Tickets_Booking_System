@@ -55,9 +55,7 @@ CREATE TABLE `filmsession`(
 CREATE TABLE `tickets`(
   `tickets_id` int NOT NULL AUTO_INCREMENT,
   `film_id` int NOT NULL,
-  `mv_name` varchar	(20) NOT NULL,
-  `hall_id` int NOT NULL,
-  `userid` varchar	(20) NOT NULL,
+  `userid` varchar(20) NOT NULL,
   `row` INT NOT NULL,
   `col` INT NOT NULL,
   PRIMARY KEY(`tickets_id`),
