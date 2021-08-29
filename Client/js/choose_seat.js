@@ -54,7 +54,8 @@ function purchase_con(number) {
     obj.number = number;
     obj.seats = new Array(number);
     for (var i = 0; i < number; i++) {
-        obj.seats[i] = { col: arr[i] % 7 + 1, row: parseInt(arr[i] / 7) + 1 };
+        if (arr[i] % 7 == 0)
+            obj.seats[i] = { col: arr[i] % 7 + 1, row: parseInt(arr[i] / 7) + 1 };
     }
     var xhr = new XMLHttpRequest();
     xhr.responseType = "json";

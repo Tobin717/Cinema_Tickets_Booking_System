@@ -21,6 +21,8 @@ function onload_myticket() {
                     document.getElementsByClassName("ticket" + (i + 1).toString())[4].innerHTML = xhr.response.seats.seats[i].end_time;
                     document.getElementsByClassName("ticket" + (i + 1).toString())[5].innerHTML = xhr.response.seats.seats[i].row + "行" + xhr.response.seats.seats[i].col + "座";
                     button[i] = xhr.response.seats.seats[i].film_id;
+                    numberrow[i] = xhr.response.seats.seats[i].row;
+                    numbercol[i] = xhr.response.seats.seats[i].col;
                 }
                 for (var i = xhr.response.number; i < 6; i++) {
                     document.getElementsByClassName("downbutton")[i].disabled = true;
@@ -30,13 +32,13 @@ function onload_myticket() {
         }
     }
 }
-function refund_ticket(number) {
+function refund_ticket(number, row, col) {
     var username = getCookie("username");
     var obj = new Object();
     obj.userid = username;
     obj.film_id = number;
-    obj.row = parseInt(number / 7) + 1;
-    obj.col = number % 7 + 1
+    obj.row = row;
+    obj.col = col;
     var xhr = new XMLHttpRequest();
     xhr.responseType = "json";
     xhr.timeout = 3000;
