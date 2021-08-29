@@ -141,9 +141,6 @@ function submit_purchase(number) {
                 setCookie("unavailable", xhr.response.unavailable);
                 location.href = "choose_seat.html";
             }
-            if (unavailable == 49) {
-                alert("该场次已满");
-            }
         }
     }
 }
@@ -174,7 +171,7 @@ function search() {
                     document.getElementsByClassName("ticket" + (i + 1).toString())[2].innerHTML = "";
                     document.getElementsByClassName("ticket" + (i + 1).toString())[3].innerHTML = "";
                     document.getElementsByClassName("downbutton")[i].disabled = true;
-                    document.getElementsByClassName("prize")[i].innerHTML="";
+                    document.getElementsByClassName("prize")[i].innerHTML = "";
                 }
             }
             else {
