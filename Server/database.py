@@ -51,6 +51,19 @@ def book(userid,film_id,seats,number):
 	try:
 		for i in range(0,number):
 			db.execute('insert into tickets (`film_id`,`userid`,`row`,`col`) values(%s,%s,%s,%s)',(film_id,userid,seats[i]['row'],seats[i]['col']))
+			db.execute('select balance from userinfo where `userid`=%s', (userid,))
+			balance=db.fetchone()['balance']
+			db.execute('SELECT userid FROM tickets WHERE film_id=%s,row=%s,col=%s',(film_id,seats[i]['row'],seats[i]['col']))
+			exist=db.fetchone()
+			if exist:
+				conn.rollback()
+				return -2
+			if balance<50:
+				conn.rollback()
+				return -1
+			else:
+				balance=balance-50
+				db.execute('UPDATE userinfo SET balance=%s WHERE userid=%s',(balance,userid))
 	except Exception as e:
 		conn.rollback()
 		print(e)

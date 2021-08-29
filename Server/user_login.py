@@ -210,7 +210,7 @@ def getTickets():
 	else:
 		return json.dumps( {'errcoe':1,'errmsg':"失败"}),400
 
-@app.route('/searchMv',methods=[POST])
+@app.route('/searchMv',methods=['POST'])
 def searchMv():
 	if request.headers['Content-Type'] == "application/json":
 		mv_name=request.get_json()['mv_name']
