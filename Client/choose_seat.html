@@ -7,187 +7,106 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>在线选座</title>
     <link rel="stylesheet" tyle=text/css href="./css/choose_seat.css">
+    <script src="js/check_cookie.js"></script>
+    <script src="js/choose_seat.js"></script>
 </head>
 
-<body>
+<body onload="onload_choose()">
     <div class="header">
         <div class="container">
             <h1>欢迎进入狗眼电影订票系统!</h>
         </div>
     </div>
     <div class="Box">
-        <button name="back"><a href="buyticket.html">返回订票</a></button>
+        <button class="button_con"><a href="buyticket.html">返回订票</a></button>
         <div class="box1">
+            <br><br>
             <p>屏幕</p>
             <ul>
                 <li>
-                    <button></button>
-                    <button></button>
-                    <button></button>
-                    <button></button>
-                    <button></button>
-                    <button></button>
-                    <button></button>
-                    <button></button>
-                    <button></button>
-                    <button></button>
-                    <button></button>
-                    <button></button>
-                    <button></button>
-                    <button></button>
-                    <button></button>
-                    <button></button>
-                    <button></button>
+                    <button class="button_in" onclick="turn_green(1)"></button>
+                    <button class="button_in" onclick="turn_green(2)"></button>
+                    <button class="button_in" onclick="turn_green(3)"></button>
+                    <button class="button_in" onclick="turn_green(4)"></button>
+                    <button class="button_in" onclick="turn_green(5)"></button>
+                    <button class="button_in" onclick="turn_green(6)"></button>
+                    <button class="button_in" onclick="turn_green(7)"></button>
                 </li>
             </ul>
             <ul>
                 <li>
-                    <button></button>
-                    <button></button>
-                    <button></button>
-                    <button></button>
-                    <button></button>
-                    <button></button>
-                    <button></button>
-                    <button></button>
-                    <button></button>
-                    <button></button>
-                    <button></button>
-                    <button></button>
-                    <button></button>
-                    <button></button>
-                    <button></button>
-                    <button></button>
-                    <button></button>
+                    <button class="button_in" onclick="turn_green(8)"></button>
+                    <button class="button_in" onclick="turn_green(9)"></button>
+                    <button class="button_in" onclick="turn_green(10)"></button>
+                    <button class="button_in" onclick="turn_green(11)"></button>
+                    <button class="button_in" onclick="turn_green(12)"></button>
+                    <button class="button_in" onclick="turn_green(13)"></button>
+                    <button class="button_in" onclick="turn_green(14)"></button>
                 </li>
             </ul>
             <ul>
                 <li>
-                    <button></button>
-                    <button></button>
-                    <button></button>
-                    <button></button>
-                    <button></button>
-                    <button></button>
-                    <button></button>
-                    <button></button>
-                    <button></button>
-                    <button></button>
-                    <button></button>
-                    <button></button>
-                    <button></button>
-                    <button></button>
-                    <button></button>
-                    <button></button>
-                    <button></button>
+                    <button class="button_in" onclick="turn_green(15)"></button>
+                    <button class="button_in" onclick="turn_green(16)"></button>
+                    <button class="button_in" onclick="turn_green(17)"></button>
+                    <button class="button_in" onclick="turn_green(18)"></button>
+                    <button class="button_in" onclick="turn_green(19)"></button>
+                    <button class="button_in" onclick="turn_green(20)"></button>
+                    <button class="button_in" onclick="turn_green(21)"></button>
                 </li>
             </ul>
             <ul>
                 <li>
-                    <button></button>
-                    <button></button>
-                    <button></button>
-                    <button></button>
-                    <button></button>
-                    <button></button>
-                    <button></button>
-                    <button></button>
-                    <button></button>
-                    <button></button>
-                    <button></button>
-                    <button></button>
-                    <button></button>
-                    <button></button>
-                    <button></button>
-                    <button></button>
-                    <button></button>
+                    <button class="button_in" onclick="turn_green(22)"></button>
+                    <button class="button_in" onclick="turn_green(23)"></button>
+                    <button class="button_in" onclick="turn_green(24)"></button>
+                    <button class="button_in" onclick="turn_green(25)"></button>
+                    <button class="button_in" onclick="turn_green(26)"></button>
+                    <button class="button_in" onclick="turn_green(27)"></button>
+                    <button class="button_in" onclick="turn_green(28)"></button>
                 </li>
             </ul>
             <ul>
                 <li>
-                    <button></button>
-                    <button></button>
-                    <button></button>
-                    <button></button>
-                    <button></button>
-                    <button></button>
-                    <button></button>
-                    <button></button>
-                    <button></button>
-                    <button></button>
-                    <button></button>
-                    <button></button>
-                    <button></button>
-                    <button></button>
-                    <button></button>
-                    <button></button>
-                    <button></button>
+                    <button class="button_in" onclick="turn_green(29)"></button>
+                    <button class="button_in" onclick="turn_green(30)"></button>
+                    <button class="button_in" onclick="turn_green(31)"></button>
+                    <button class="button_in" onclick="turn_green(32)"></button>
+                    <button class="button_in" onclick="turn_green(33)"></button>
+                    <button class="button_in" onclick="turn_green(34)"></button>
+                    <button class="button_in" onclick="turn_green(35)"></button>
                 </li>
             </ul>
             <ul>
                 <li>
-                    <button></button>
-                    <button></button>
-                    <button></button>
-                    <button></button>
-                    <button></button>
-                    <button></button>
-                    <button></button>
-                    <button></button>
-                    <button></button>
-                    <button></button>
-                    <button></button>
-                    <button></button>
-                    <button></button>
-                    <button></button>
-                    <button></button>
-                    <button></button>
-                    <button></button>
+                    <button class="button_in" onclick="turn_green(36)"></button>
+                    <button class="button_in" onclick="turn_green(37)"></button>
+                    <button class="button_in" onclick="turn_green(38)"></button>
+                    <button class="button_in" onclick="turn_green(39)"></button>
+                    <button class="button_in" onclick="turn_green(40)"></button>
+                    <button class="button_in" onclick="turn_green(41)"></button>
+                    <button class="button_in" onclick="turn_green(42)"></button>
                 </li>
             </ul>
             <ul>
                 <li>
-                    <button></button>
-                    <button></button>
-                    <button></button>
-                    <button></button>
-                    <button></button>
-                    <button></button>
-                    <button></button>
-                    <button></button>
-                    <button></button>
-                    <button></button>
-                    <button></button>
-                    <button></button>
-                    <button></button>
-                    <button></button>
-                    <button></button>
-                    <button></button>
-                    <button></button>
+                    <button class="button_in" onclick="turn_green(43)"></button>
+                    <button class="button_in" onclick="turn_green(44)"></button>
+                    <button class="button_in" onclick="turn_green(45)"></button>
+                    <button class="button_in" onclick="turn_green(46)"></button>
+                    <button class="button_in" onclick="turn_green(47)"></button>
+                    <button class="button_in" onclick="turn_green(48)"></button>
+                    <button class="button_in" onclick="turn_green(49)"></button>
                 </li>
             </ul>
-            <ul>
-                <li>
-                    <button></button>
-                    <button></button>
-                    <button></button>
-                    <button></button>
-                    <button></button>
-                    <button></button>
-                    <button></button>
-                    <button></button>
-                    <button></button>
-                    <button></button>
-                    <button></button>
-                    <button></button>
-                    <button></button>
-                    <button></button>
-                    <button></button>
-                    <button></button>
-                    <button></button>
-                </li>
-            </ul>
-            <p>过道</p>
         </div>
+        <button onclick="purchase_con(select)">确认购买</button>
     </div>
+    <script>
+        var buttonarr = new Array(49);
+        for (var i = 0; i < 49; i++) {
+            buttonarr[i] = 0;
+        }
+        var select = 0;
+    </script>
 </body>

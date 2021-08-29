@@ -9,9 +9,10 @@
     <link rel="stylesheet" tyle=text/css href="css/buyticket.css">
     <link rel="stylesheet" tyle=text/css href="css/all.css">
     <script src="js/check_cookie.js"></script>
+    <script src="js/buyticket.js"></script>
 </head>
 
-<body onload="checkCookie_user()">
+<body onload="onload_buyticket()">
     <div class="header">
         <div class="head_inner">
             <a class="logo" href="homepage.html"></a>
@@ -53,16 +54,15 @@
                 <hr>
                 <ul>
                     <li>
-                        <button class="upbutton" name="chongzhi">充值/余额查询</button>
-                        <button class="upbutton" name="search">搜索影片</button>
+                        <button class="upbutton" onclick="charge()">充值</button>
+                        <button class="upbutton" onclick="get_balance()">余额查询</button>
+                        <button class="upbutton">搜索影片</button>
                         <input name="TextSearch" cols:20px rows:1px></input>
                     </li>
                 </ul>
                 <br>
                 <div class="left">
                     <p>相关信息
-                    <p>
-                        <hr>
                     <table width="400" border="1" cellspacing="0">
                         <tr>
                             <th>影院名称</th>
@@ -73,63 +73,63 @@
                             <th>购买</th>
                         </tr>
                         <tr>
-                            <td>&nbsp;</td>
-                            <td>&nbsp;</td>
-                            <td>&nbsp;</td>
-                            <td>&nbsp;</td>
-                            <td>50</td>
+                            <td class="ticket1">&nbsp;</td>
+                            <td class="ticket1">&nbsp;</td>
+                            <td class="ticket1">&nbsp;</td>
+                            <td class="ticket1">&nbsp;</td>
+                            <td class="ticket1">50</td>
                             <td>
-                                <button class="downbutton" onclick="submit_purchase()">购买</button>
+                                <button class="downbutton" onclick="submit_purchase(button1)">购买</button>
                             </td>
                         </tr>
                         <tr>
-                            <td>&nbsp;</td>
-                            <td>&nbsp;</td>
-                            <td>&nbsp;</td>
-                            <td>&nbsp;</td>
+                            <td class="ticket2">&nbsp;</td>
+                            <td class="ticket2">&nbsp;</td>
+                            <td class="ticket2">&nbsp;</td>
+                            <td class="ticket2">&nbsp;</td>
                             <td>50</td>
                             <td>
-                                <button class="downbutton" onclick="submit_purchase()">购买</button>
+                                <button class="downbutton" onclick="submit_purchase(button2)">购买</button>
                             </td>
                         </tr>
                         <tr>
-                            <td>&nbsp;</td>
-                            <td>&nbsp;</td>
-                            <td>&nbsp;</td>
-                            <td>&nbsp;</td>
+                            <td class="ticket3">&nbsp;</td>
+                            <td class="ticket3">&nbsp;</td>
+                            <td class="ticket3">&nbsp;</td>
+                            <td class="ticket3">&nbsp;</td>
                             <td>50</td>
                             <td>
-                                <button class="downbutton" onclick="submit_purchase()">购买</button>
+                                <button class="downbutton" onclick="submit_purchase(button3)">购买</button>
                             </td>
                         </tr>
                         <tr>
-                            <td>&nbsp;</td>
-                            <td>&nbsp;</td>
-                            <td>&nbsp;</td>
-                            <td>&nbsp;</td>
+                            <td class="ticket4">&nbsp;</td>
+                            <td class="ticket4">&nbsp;</td>
+                            <td class="ticket4">&nbsp;</td>
+                            <td class="ticket4">&nbsp;</td>
                             <td>50</td>
                             <td>
-                                <button class="downbutton" onclick="submit_purchase()">购买</button>
+                                <button class="downbutton" onclick="submit_purchase(button4)">购买</button>
                             </td>
                         </tr>
                         <tr>
-                            <td>&nbsp;</td>
-                            <td>&nbsp;</td>
-                            <td>&nbsp;</td>
-                            <td>&nbsp;</td>
+                            <td class="ticket5">&nbsp;</td>
+                            <td class="ticket5">&nbsp;</td>
+                            <td class="ticket5">&nbsp;</td>
+                            <td class="ticket5">&nbsp;</td>
                             <td>50</td>
                             <td>
-                                <button class="downbutton" onclick="submit_purchase()">购买</button>
+                                <button class="downbutton" onclick="submit_purchase(button5)">购买</button>
                             </td>
                         </tr>
                         <tr>
-                            <td>&nbsp;</td>
-                            <td>&nbsp;</td>
-                            <td>&nbsp;</td>
-                            <td>&nbsp;</td>
+                            <td class="ticket6">&nbsp;</td>
+                            <td class="ticket6">&nbsp;</td>
+                            <td class="ticket6">&nbsp;</td>
+                            <td class="ticket6">&nbsp;</td>
                             <td>50</td>
                             <td>
-                                <button class="downbutton" onclick="submit_purchase()">购买</button>
+                                <button class="downbutton" onclick="submit_purchase(button6)">购买</button>
                             </td>
                         </tr>
                     </table>
@@ -144,4 +144,12 @@
                 </div>
         </div>
     </div>
+    <script>
+        var button1;
+        var button2;
+        var button3;
+        var button4;
+        var button5;
+        var button6;
+    </script>
 </body>
