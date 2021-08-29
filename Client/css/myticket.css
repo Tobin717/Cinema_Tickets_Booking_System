@@ -48,7 +48,7 @@ input {
     margin-left: 50px;
 }
 
-button {
+.upbutton {
     background-color: deepskyblue;
     height: 30px;
     width: 100px;
@@ -70,6 +70,7 @@ table {
     height: 600px;
     background-color: white;
     margin: auto;
+    text-align: center;
 }
 
 li {
@@ -83,4 +84,13 @@ li {
 
 .right a:hover {
     color: greenyellow;
+}
+
+th {
+    text-align: center;
+}
+
+.downbutton {
+    width: 83px;
+    height: 22px;
 }
