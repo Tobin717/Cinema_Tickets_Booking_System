@@ -9,9 +9,10 @@
     <link rel="stylesheet" tyle=text/css href="css/myticket.css">
     <link rel="stylesheet" tyle=text/css href="css/all.css">
     <script src="js/check_cookie.js"></script>
+    <script src="js/buyticket.js"></script>
 </head>
 
-<body onload="checkCookie()">
+<body onload="onload_myticket()">
     <div class="header">
         <div class="head_inner">
             <a class="logo" href="homepage.html"></a>
@@ -53,9 +54,8 @@
                 <hr>
                 <ul>
                     <li>
-                        <button name="chongzhi">充值/余额查询</button>
-                        <button name="search">搜索影片</button>
-                        <input name="TextSearch" cols:20px rows:1px></input>
+                        <button class="upbutton" onclick="charge()">充值</button>
+                        <button class="upbutton" onclick="get_balance()">查询余额</button>
                     </li>
                 </ul>
                 <br>
@@ -65,67 +65,86 @@
                         <hr>
                     <table width="400" border="1" cellspacing="0">
                         <tr>
-                            <th align="center">影院名称</th>
-                            <th align="center">场厅</th>
-                            <th align="center">电影名字</th>
-                            <th align="center">开始时间</th>
-                            <th align="center">播放时间</th>
-                            <th align="center">价格</th>
-                            <th align="center">座位号</th>
+                            <th>影院名称</th>
+                            <th>场厅</th>
+                            <th>电影名字</thr>
+                            <th>开始时间</th>
+                            <th>播放时间</th>
+                            <th>价格</th>
+                            <th>座位号</thr>
+                            <th>退票</th>
                         </tr>
                         <tr>
-                            <td align="left">&nbsp;</td>
-                            <td align="left">&nbsp;</td>
-                            <td align="left">&nbsp;</td>
-                            <td align="left">&nbsp;</td>
-                            <td align="left">&nbsp;</td>
-                            <td align="left">&nbsp;</td>
-                            <td align="left">&nbsp;</td>
+                            <td class="ticket1">&nbsp;</td>
+                            <td class="ticket1">&nbsp;</td>
+                            <td class="ticket1">&nbsp;</td>
+                            <td class="ticket1">&nbsp;</td>
+                            <td class="ticket1">&nbsp;</td>
+                            <td>50</td>
+                            <td class="ticket1">&nbsp;</td>
+                            <td>
+                                <button class="downbutton" onclick="refund_ticket(button1)">退票</button>
+                            </td>
                         </tr>
                         <tr>
-                            <td align="left">&nbsp;</td>
-                            <td align="left">&nbsp;</td>
-                            <td align="left">&nbsp;</td>
-                            <td align="left">&nbsp;</td>
-                            <td align="left">&nbsp;</td>
-                            <td align="left">&nbsp;</td>
-                            <td align="left">&nbsp;</td>
+                            <td class="ticket2">&nbsp;</td>
+                            <td class="ticket2">&nbsp;</td>
+                            <td class="ticket2">&nbsp;</td>
+                            <td class="ticket2">&nbsp;</td>
+                            <td class="ticket2">&nbsp;</td>
+                            <td>50</td>
+                            <td class="ticket2">&nbsp;</td>
+                            <td>
+                                <button class="downbutton" onclick="refund_ticket(button2)">退票</button>
+                            </td>
                         </tr>
                         <tr>
-                            <td align="left">&nbsp;</td>
-                            <td align="left">&nbsp;</td>
-                            <td align="left">&nbsp;</td>
-                            <td align="left">&nbsp;</td>
-                            <td align="left">&nbsp;</td>
-                            <td align="left">&nbsp;</td>
-                            <td align="left">&nbsp;</td>
+                            <td class="ticket3">&nbsp;</td>
+                            <td class="ticket3">&nbsp;</td>
+                            <td class="ticket3">&nbsp;</td>
+                            <td class="ticket3">&nbsp;</td>
+                            <td class="ticket3">&nbsp;</td>
+                            <td>50</td>
+                            <td class="ticket3">&nbsp;</td>
+                            <td>
+                                <button class="downbutton" onclick="refund_ticket(button3)">退票</button>
+                            </td>
                         </tr>
                         <tr>
-                            <td align="left">&nbsp;</td>
-                            <td align="left">&nbsp;</td>
-                            <td align="left">&nbsp;</td>
-                            <td align="left">&nbsp;</td>
-                            <td align="left">&nbsp;</td>
-                            <td align="left">&nbsp;</td>
-                            <td align="left">&nbsp;</td>
+                            <td class="ticket4">&nbsp;</td>
+                            <td class="ticket4">&nbsp;</td>
+                            <td class="ticket4">&nbsp;</td>
+                            <td class="ticket4">&nbsp;</td>
+                            <td class="ticket4">&nbsp;</td>
+                            <td>50</td>
+                            <td class="ticket4">&nbsp;</td>
+                            <td>
+                                <button class="downbutton" onclick="refund_ticket(button4)">退票</button>
+                            </td>
                         </tr>
                         <tr>
-                            <td align="left">&nbsp;</td>
-                            <td align="left">&nbsp;</td>
-                            <td align="left">&nbsp;</td>
-                            <td align="left">&nbsp;</td>
-                            <td align="left">&nbsp;</td>
-                            <td align="left">&nbsp;</td>
-                            <td align="left">&nbsp;</td>
+                            <td class="ticket5">&nbsp;</td>
+                            <td class="ticket5">&nbsp;</td>
+                            <td class="ticket5">&nbsp;</td>
+                            <td class="ticket5">&nbsp;</td>
+                            <td class="ticket5">&nbsp;</td>
+                            <td>50</td>
+                            <td class="ticket5">&nbsp;</td>
+                            <td>
+                                <button class="downbutton" onclick="refund_ticket(button5)">退票</button>
+                            </td>
                         </tr>
                         <tr>
-                            <td align="left">&nbsp;</td>
-                            <td align="left">&nbsp;</td>
-                            <td align="left">&nbsp;</td>
-                            <td align="left">&nbsp;</td>
-                            <td align="left">&nbsp;</td>
-                            <td align="left">&nbsp;</td>
-                            <td align="left">&nbsp;</td>
+                            <td class="ticket6">&nbsp;</td>
+                            <td class="ticket6">&nbsp;</td>
+                            <td class="ticket6">&nbsp;</td>
+                            <td class="ticket6">&nbsp;</td>
+                            <td class="ticket6">&nbsp;</td>
+                            <td>50</td>
+                            <td class="ticket6">&nbsp;</td>
+                            <td>
+                                <button class="downbutton" onclick="refund_ticket(button6)">退票</button>
+                            </td>
                         </tr>
                     </table>
                 </div>

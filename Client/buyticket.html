@@ -56,8 +56,8 @@
                     <li>
                         <button class="upbutton" onclick="charge()">充值</button>
                         <button class="upbutton" onclick="get_balance()">余额查询</button>
-                        <button class="upbutton">搜索影片</button>
-                        <input name="TextSearch" cols:20px rows:1px></input>
+                        <button class="upbutton" onclick="search()">搜索影片</button>
+                        <input id="filmname" cols:20px rows:1px></input>
                     </li>
                 </ul>
                 <br>
@@ -78,8 +78,8 @@
                             <td class="ticket1">&nbsp;</td>
                             <td class="ticket1">&nbsp;</td>
                             <td class="ticket1">50</td>
-                            <td>
-                                <button class="downbutton" onclick="submit_purchase(button1)">购买</button>
+                            <td class="prize">
+                                <button class="downbutton" onclick="submit_purchase(button[0])">购买</button>
                             </td>
                         </tr>
                         <tr>
@@ -87,9 +87,9 @@
                             <td class="ticket2">&nbsp;</td>
                             <td class="ticket2">&nbsp;</td>
                             <td class="ticket2">&nbsp;</td>
-                            <td>50</td>
+                            <td class="prize">50</td>
                             <td>
-                                <button class="downbutton" onclick="submit_purchase(button2)">购买</button>
+                                <button class="downbutton" onclick="submit_purchase(button[1])">购买</button>
                             </td>
                         </tr>
                         <tr>
@@ -97,9 +97,9 @@
                             <td class="ticket3">&nbsp;</td>
                             <td class="ticket3">&nbsp;</td>
                             <td class="ticket3">&nbsp;</td>
-                            <td>50</td>
+                            <td class="prize">50</td>
                             <td>
-                                <button class="downbutton" onclick="submit_purchase(button3)">购买</button>
+                                <button class="downbutton" onclick="submit_purchase(button[2])">购买</button>
                             </td>
                         </tr>
                         <tr>
@@ -107,9 +107,9 @@
                             <td class="ticket4">&nbsp;</td>
                             <td class="ticket4">&nbsp;</td>
                             <td class="ticket4">&nbsp;</td>
-                            <td>50</td>
+                            <td class="prize">50</td>
                             <td>
-                                <button class="downbutton" onclick="submit_purchase(button4)">购买</button>
+                                <button class="downbutton" onclick="submit_purchase(button[3])">购买</button>
                             </td>
                         </tr>
                         <tr>
@@ -117,9 +117,9 @@
                             <td class="ticket5">&nbsp;</td>
                             <td class="ticket5">&nbsp;</td>
                             <td class="ticket5">&nbsp;</td>
-                            <td>50</td>
+                            <td class="prize">50</td>
                             <td>
-                                <button class="downbutton" onclick="submit_purchase(button5)">购买</button>
+                                <button class="downbutton" onclick="submit_purchase(button[4])">购买</button>
                             </td>
                         </tr>
                         <tr>
@@ -127,9 +127,9 @@
                             <td class="ticket6">&nbsp;</td>
                             <td class="ticket6">&nbsp;</td>
                             <td class="ticket6">&nbsp;</td>
-                            <td>50</td>
+                            <td class="prize">50</td>
                             <td>
-                                <button class="downbutton" onclick="submit_purchase(button6)">购买</button>
+                                <button class="downbutton" onclick="submit_purchase(button[5])">购买</button>
                             </td>
                         </tr>
                     </table>
@@ -145,11 +145,6 @@
         </div>
     </div>
     <script>
-        var button1;
-        var button2;
-        var button3;
-        var button4;
-        var button5;
-        var button6;
+        var button = new Array(6);
     </script>
 </body>

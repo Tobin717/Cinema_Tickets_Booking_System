@@ -26,8 +26,10 @@ function onload_choose() {
     xhr.onreadystatechange = function () {
         if (xhr.readyState == 4) {
             if (xhr.status === 200) {
-                if (xhr.response.available == 49) {
-                    alert("该场次已满");
+                for (var i = 0; i < xhr.response.unavailable; i++) {
+                    var buttonx = document.getElementsByClassName("button_in")[xhr.response.result[i].row * 7 + xhr.response.result[i].col - 8];
+                    buttonx.style.backgroundImage = "url('img/index.png')";
+                    buttonx.disabled=true;
                 }
             }
         }
