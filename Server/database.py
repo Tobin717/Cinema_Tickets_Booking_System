@@ -38,7 +38,7 @@ def changePwd(userid, oldpassword,newpassword):
 	else:
 		return None
 def getUserEmail(userid):
-	db.execute('select email from userinfo where `userid`=%s', (userid,))
+	db.execute('select email,balance from userinfo where `userid`=%s', (userid,))
 	result = db.fetchone()
 	return result
 
@@ -85,18 +85,35 @@ def charge(userid,amount):
 
 def getFilmTickets(number):
 	result=[]
-	temp={'film_id':'','cinema_name':'','mv_name':'','hall_id':'','start_time':''}
 	db.execute('SELECT film_id,cinema_id,hall_id,mv_name,start_time FROM filmsession ORDER BY RAND() LIMIT %s',(number,))
 	dbresult=db.fetchall()
+	#print(dbresult)
 	for i in range(0,number):
+		temp={'film_id':'','cinema_name':'','mv_name':'','hall_id':'','start_time':''}
 		db.execute('SELECT cinema_name FROM cinema_info WHERE cinema_id=%s',(dbresult[i]['cinema_id'],))
 		temp['cinema_name']=db.fetchone()['cinema_name']
 		temp['mv_name']=dbresult[i]['mv_name']
 		temp['start_time']=dbresult[i]['start_time']
+		temp['hall_id']=dbresult[i]['hall_id']
 		temp['film_id']=dbresult[i]['film_id']
 		result.append(temp)
 	return result
 
+def searchByName(mv_name):
+	result=[]
+	db.execute('SELECT film_id,cinema_id,hall_id,mv_name,start_time FROM filmsession WHERE mv_name=%s',(mv_name,))
+	dbresult=db.fetchall()
+	#print(dbresult)
+	for i in range(0,number):
+		temp={'film_id':'','cinema_name':'','mv_name':'','hall_id':'','start_time':''}
+		db.execute('SELECT cinema_name FROM cinema_info WHERE cinema_id=%s',(dbresult[i]['cinema_id'],))
+		temp['cinema_name']=db.fetchone()['cinema_name']
+		temp['mv_name']=dbresult[i]['mv_name']
+		temp['start_time']=dbresult[i]['start_time']
+		temp['hall_id']=dbresult[i]['hall_id']
+		temp['film_id']=dbresult[i]['film_id']
+		result.append(temp)
+	return result
 
 def encrypt(passwd):
     return generate_password_hash(passwd)

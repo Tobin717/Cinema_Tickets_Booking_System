@@ -1,7 +1,8 @@
 from flask import Flask, redirect, url_for, request
-from database import userLogin,createUser,findUser,getMvRank,changePwd,getUserEmail,getUnavailableFilm,book,getUserTickets,refundUserTickets,charge,getFilmTickets
+from database import userLogin,createUser,findUser,getMvRank,changePwd,getUserEmail,getUnavailableFilm,book,getUserTickets,refundUserTickets,charge,getFilmTickets,searchByName
 from flask_cors import *
 import time
+import datetime
 import json
 
 app = Flask(__name__)
@@ -11,7 +12,12 @@ CORS(app,supports_credentials=True)
 #def showpage():
 #	print("requesting homepage")
 #return render_template("log_in.html")
-
+class DateEncoder(json.JSONEncoder):
+    def default(self, obj):
+        if isinstance(obj,datetime.datetime):
+            return obj.strftime("%Y-%m-%d %H:%M:%S")
+        else:
+            return json.JSONEncoder.default(self,obj)
 
 @app.route('/login',methods = ['POST'])
 def login():
@@ -100,11 +106,11 @@ def getEmail():
 	if request.headers['Content-Type'] == "application/json":
 		userid=request.get_json()['userid']
 		result=getUserEmail(userid)
-		
 		if result:
-			msg={"errcode":0,"errmsg":"请求成功","email":" "}
-			msg["email"]=result["email"]
-			return msg,200
+			finalresult={'errcode':0,'errmsg':"请求成功!",'email':'','balance':''}
+			finalresult['email']=result['email']
+			finalresult['balance']=result['balance']
+			return json.dumps(finalresult),200
 		else:
 			return {'errcode':1,'errmsg':"请求失败！"},400
 	else:
@@ -198,11 +204,24 @@ def getTickets():
 		number=request.get_json()['number']
 		result=getFilmTickets(number)
 		if result:
-			return json.dumps({'errcoe':0,'errmsg':"成功",'tickets':result}),200
+			return json.dumps({'errcoe':0,'errmsg':"成功",'tickets':result},cls=DateEncoder),200
 		else:
 			return json.dumps( {'errcoe':1,'errmsg':"失败"}),400
 	else:
 		return json.dumps( {'errcoe':1,'errmsg':"失败"}),400
+
+@app.route('/searchMv',methods=[POST])
+def searchMv():
+	if request.headers['Content-Type'] == "application/json":
+		mv_name=request.get_json()['mv_name']
+		result=searchByName(mv_name)
+		if result:
+			return json.dumps({'errcoe':0,'errmsg':"成功",'tickets':result},cls=DateEncoder),200
+		else:
+			return json.dumps( {'errcoe':1,'errmsg':"失败"}),400
+	else:
+		return json.dumps( {'errcoe':1,'errmsg':"失败"}),400
+
 
 if __name__ == '__main__':
    app.run()
