@@ -77,7 +77,7 @@ def getUserTickets(userid):
 	temp=db.fetchall()
 	number=len(temp)
 	for i in range(0,number):
-		dbresult={'film_id':'','cinema_name':'','mv_name':'','hall_id':'','start_time':'','row','col'}
+		dbresult={'film_id':'','cinema_name':'','mv_name':'','hall_id':'','start_time':'','row':'','col':''}
 		dbresult['film_id']=temp[i]['film_id']
 		dbresult['row']=temp[i]['row']
 		dbresult['col']=temp[i]['col']
