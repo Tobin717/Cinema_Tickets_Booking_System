@@ -6,13 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>购票</title>
-    <link rel="stylesheet" tyle=text/css href="css/buyticket.css">
+    <link rel="stylesheet" tyle=text/css href="css/refund.css">
     <link rel="stylesheet" tyle=text/css href="css/all.css">
-    <script src="js/check_cookie.js"></script>
-    <script src="js/buyticket.js"></script>
-</head>
-
-<body onload="onload_buyticket()">
+<body>
     <div class="header">
         <div class="head_inner">
             <a class="logo" href="homepage.html"></a>
@@ -50,14 +46,12 @@
 <body>
     <div class="box1">
         <div class="box2">
-            <h3>电影订票界面</h>
+            <h3>电影退票界面</h>
                 <hr>
                 <ul>
                     <li>
                         <button class="upbutton" onclick="charge()">充值</button>
                         <button class="upbutton" onclick="get_balance()">余额查询</button>
-                        <button class="upbutton">搜索影片</button>
-                        <input name="TextSearch" cols:20px rows:1px></input>
                     </li>
                 </ul>
                 <br>
@@ -69,17 +63,15 @@
                             <th>场厅名称</th>
                             <th>电影名字</th>
                             <th>开始时间</th>
-                            <th>价格</th>
-                            <th>购买</th>
+                            <th>退票</th>
                         </tr>
                         <tr>
                             <td class="ticket1">&nbsp;</td>
                             <td class="ticket1">&nbsp;</td>
                             <td class="ticket1">&nbsp;</td>
                             <td class="ticket1">&nbsp;</td>
-                            <td class="ticket1">50</td>
                             <td>
-                                <button class="downbutton" onclick="submit_purchase(button1)">购买</button>
+                                <button class="downbutton" onclick="refund(button1)">确认退票</button>
                             </td>
                         </tr>
                         <tr>
@@ -87,9 +79,8 @@
                             <td class="ticket2">&nbsp;</td>
                             <td class="ticket2">&nbsp;</td>
                             <td class="ticket2">&nbsp;</td>
-                            <td>50</td>
                             <td>
-                                <button class="downbutton" onclick="submit_purchase(button2)">购买</button>
+                                <button class="downbutton" onclick="refund(button2)">确认退票</button>
                             </td>
                         </tr>
                         <tr>
@@ -97,9 +88,8 @@
                             <td class="ticket3">&nbsp;</td>
                             <td class="ticket3">&nbsp;</td>
                             <td class="ticket3">&nbsp;</td>
-                            <td>50</td>
                             <td>
-                                <button class="downbutton" onclick="submit_purchase(button3)">购买</button>
+                                <button class="downbutton" onclick="refund(button3)">确认退票</button>
                             </td>
                         </tr>
                         <tr>
@@ -107,9 +97,8 @@
                             <td class="ticket4">&nbsp;</td>
                             <td class="ticket4">&nbsp;</td>
                             <td class="ticket4">&nbsp;</td>
-                            <td>50</td>
                             <td>
-                                <button class="downbutton" onclick="submit_purchase(button4)">购买</button>
+                                <button class="downbutton" onclick="refund(button4)">确认退票</button>
                             </td>
                         </tr>
                         <tr>
@@ -117,9 +106,8 @@
                             <td class="ticket5">&nbsp;</td>
                             <td class="ticket5">&nbsp;</td>
                             <td class="ticket5">&nbsp;</td>
-                            <td>50</td>
                             <td>
-                                <button class="downbutton" onclick="submit_purchase(button5)">购买</button>
+                                <button class="downbutton" onclick="refund(button5)">确认退票</button>
                             </td>
                         </tr>
                         <tr>
@@ -127,9 +115,8 @@
                             <td class="ticket6">&nbsp;</td>
                             <td class="ticket6">&nbsp;</td>
                             <td class="ticket6">&nbsp;</td>
-                            <td>50</td>
                             <td>
-                                <button class="downbutton" onclick="submit_purchase(button6)">购买</button>
+                                <button class="downbutton" onclick="refund(button6)">确认退票</button>
                             </td>
                         </tr>
                     </table>
@@ -144,12 +131,3 @@
                 </div>
         </div>
     </div>
-    <script>
-        var button1;
-        var button2;
-        var button3;
-        var button4;
-        var button5;
-        var button6;
-    </script>
-</body>

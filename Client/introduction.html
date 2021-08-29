@@ -5,14 +5,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>个人信息</title>
-    <link rel="stylesheet" tyle=text/css href="css/mymessage.css">
+    <title>狗眼电影</title>
     <link rel="stylesheet" tyle=text/css href="css/all.css">
-    <script src="js/check_cookie.js"></script>
-    <script src="js/mymessage.js"></script>
+    <link rel="stylesheet" tyle=text/css href="css/introduction.css">
 </head>
-
-<body onload="onload_mymessage()">
+<body>
     <div class="header">
         <div class="head_inner">
             <a class="logo" href="homepage.html"></a>
@@ -28,9 +25,6 @@
                         <a href="aboutus.html">关于本站</a>
                     </li>
                     <li>
-                        <a href="buyticket.html">购票系统</a>
-                    </li>
-                    <li>
                         <a href="user.html">个人中心</a>
                     </li>
                 </ul>
@@ -41,25 +35,17 @@
         </div>
     </div>
 </body>
-
 <body>
-    <div class="container">
-        <div class="box1">
-            <label for="label1">账号</label>
-            <input rows=1px cols=20px readonly="readonly" id="label1"></input>
-            <br><br>
-            <label for="label2">邮箱</label>
-            <input rows=1px cols=20px readonly="readonly" id="label2"></input>
-            <br><br>
-            <label for="label2">余额</label>
-            <input rows=1px cols=20px readonly="readonly" id="label3"></input>
-            <br><br>
-            <button onclick="(location.href='change_password.html')">修改个人信息</button>
-            <br><br>
-            <button>退出登录</button>
-
-        </div>
+    <div class="container1">
+        <h1 id="mv_name"></h1><br>
+        <label id="mv_lang"></label><br>
+        <label id="grade"></label>
+        <label id="type"></label>
+        <img id="poster">
+    </div>
+    <div class="container2">
+        <h2>剧情简介</h2>
+        <p id="jianjie"></p>
     </div>
 </body>
-
 </html>

@@ -12,11 +12,12 @@ function onload_mymessage() {
     }
     xhr.open("post", "http://119.23.45.53:8080/getEmail", true);
     xhr.setRequestHeader("Content-Type", "application/json");
-    xhr.send("\{\"userid\":" + username + "\}");
+    xhr.send("\{\"userid\":\"" + username + "\"\}");
     xhr.onreadystatechange = function () {
         if (xhr.readyState == 4) {
             if (xhr.status === 200) {
                 label2.value = xhr.response.email;
+                label3.value = xhr.response.balance;
             }
         }
     }

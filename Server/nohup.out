@@ -32,3 +32,28 @@ ModuleNotFoundError: No module named 'flask'
 [2021-08-23 23:21:09 +0800] [29412] [INFO] Worker exiting (pid: 29412)
 [2021-08-23 23:21:09 +0800] [29409] [INFO] Shutting down: Master
 [2021-08-23 23:21:09 +0800] [29409] [INFO] Reason: Worker failed to boot.
+1
+[2021-08-29 20:43:15 +0800] [10456] [INFO] Starting gunicorn 20.1.0
+[2021-08-29 20:43:15 +0800] [10456] [INFO] Listening at: http://0.0.0.0:8080 (10456)
+[2021-08-29 20:43:15 +0800] [10456] [INFO] Using worker: sync
+[2021-08-29 20:43:15 +0800] [10459] [INFO] Booting worker with pid: 10459
+[2021-08-29 20:43:15 +0800] [10460] [INFO] Booting worker with pid: 10460
+[2021-08-29 20:43:15 +0800] [10461] [INFO] Booting worker with pid: 10461
+[2021-08-29 20:43:15 +0800] [10462] [INFO] Booting worker with pid: 10462
+[2021-08-29 20:52:18 +0800] [10461] [INFO] Parent changed, shutting down: <Worker 10461>
+[2021-08-29 20:52:18 +0800] [10461] [INFO] Worker exiting (pid: 10461)
+[2021-08-29 20:52:22 +0800] [10459] [INFO] Parent changed, shutting down: <Worker 10459>
+[2021-08-29 20:52:22 +0800] [10459] [INFO] Worker exiting (pid: 10459)
+getMvRank request accepted!
+its json!
+number is : 6
+number of result is: 6
+result is : 1
+[2021-08-29 20:52:22 +0800] [10462] [INFO] Parent changed, shutting down: <Worker 10462>
+[2021-08-29 20:52:22 +0800] [10462] [INFO] Worker exiting (pid: 10462)
+result is : 1
+result is : -2
+[2021-08-29 20:52:30 +0800] [10460] [INFO] Parent changed, shutting down: <Worker 10460>
+[2021-08-29 20:52:30 +0800] [10460] [INFO] Worker exiting (pid: 10460)
+result is : 1
+result is : -2
