@@ -29,7 +29,7 @@ function onload_choose() {
                 for (var i = 0; i < xhr.response.unavailable; i++) {
                     var buttonx = document.getElementsByClassName("button_in")[xhr.response.result[i].row * 7 + xhr.response.result[i].col - 8];
                     buttonx.style.backgroundImage = "url('img/index.png')";
-                    buttonx.disabled=true;
+                    buttonx.disabled = true;
                 }
             }
         }
@@ -54,7 +54,7 @@ function purchase_con(number) {
     obj.number = number;
     obj.seats = new Array(number);
     for (var i = 0; i < number; i++) {
-        obj.seats[i] = { row: arr[i] % 7 + 1, col: parseInt(arr[i] / 7) + 1 };
+        obj.seats[i] = { col: arr[i] % 7 + 1, row: parseInt(arr[i] / 7) + 1 };
     }
     var xhr = new XMLHttpRequest();
     xhr.responseType = "json";
@@ -68,6 +68,9 @@ function purchase_con(number) {
     xhr.onreadystatechange = function () {
         if (xhr.readyState == 4) {
             alert(xhr.response.errmsg);
+            if (errcode == 0) {
+                location.href = "myticket.html";
+            }
         }
     }
 }

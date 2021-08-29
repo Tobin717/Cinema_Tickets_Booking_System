@@ -10,6 +10,7 @@
     <link rel="stylesheet" tyle=text/css href="css/all.css">
     <script src="js/check_cookie.js"></script>
     <script src="js/buyticket.js"></script>
+    <script src="js/myticket.js"></script>
 </head>
 
 <body onload="onload_myticket()">
@@ -69,7 +70,7 @@
                             <th>场厅</th>
                             <th>电影名字</thr>
                             <th>开始时间</th>
-                            <th>播放时间</th>
+                            <th>结束时间</th>
                             <th>价格</th>
                             <th>座位号</thr>
                             <th>退票</th>
@@ -80,7 +81,7 @@
                             <td class="ticket1">&nbsp;</td>
                             <td class="ticket1">&nbsp;</td>
                             <td class="ticket1">&nbsp;</td>
-                            <td>50</td>
+                            <td class="prize">50</td>
                             <td class="ticket1">&nbsp;</td>
                             <td>
                                 <button class="downbutton" onclick="refund_ticket(button1)">退票</button>
@@ -92,7 +93,7 @@
                             <td class="ticket2">&nbsp;</td>
                             <td class="ticket2">&nbsp;</td>
                             <td class="ticket2">&nbsp;</td>
-                            <td>50</td>
+                            <td class="prize">50</td>
                             <td class="ticket2">&nbsp;</td>
                             <td>
                                 <button class="downbutton" onclick="refund_ticket(button2)">退票</button>
@@ -104,7 +105,7 @@
                             <td class="ticket3">&nbsp;</td>
                             <td class="ticket3">&nbsp;</td>
                             <td class="ticket3">&nbsp;</td>
-                            <td>50</td>
+                            <td class="prize">50</td>
                             <td class="ticket3">&nbsp;</td>
                             <td>
                                 <button class="downbutton" onclick="refund_ticket(button3)">退票</button>
@@ -116,7 +117,7 @@
                             <td class="ticket4">&nbsp;</td>
                             <td class="ticket4">&nbsp;</td>
                             <td class="ticket4">&nbsp;</td>
-                            <td>50</td>
+                            <td class="prize">50</td>
                             <td class="ticket4">&nbsp;</td>
                             <td>
                                 <button class="downbutton" onclick="refund_ticket(button4)">退票</button>
@@ -128,7 +129,7 @@
                             <td class="ticket5">&nbsp;</td>
                             <td class="ticket5">&nbsp;</td>
                             <td class="ticket5">&nbsp;</td>
-                            <td>50</td>
+                            <td class="prize">50</td>
                             <td class="ticket5">&nbsp;</td>
                             <td>
                                 <button class="downbutton" onclick="refund_ticket(button5)">退票</button>
@@ -140,7 +141,7 @@
                             <td class="ticket6">&nbsp;</td>
                             <td class="ticket6">&nbsp;</td>
                             <td class="ticket6">&nbsp;</td>
-                            <td>50</td>
+                            <td class="prize">50</td>
                             <td class="ticket6">&nbsp;</td>
                             <td>
                                 <button class="downbutton" onclick="refund_ticket(button6)">退票</button>
@@ -158,4 +159,7 @@
                 </div>
         </div>
     </div>
+    <script>
+        var button = new Array(6);
+    </script>
 </body>
