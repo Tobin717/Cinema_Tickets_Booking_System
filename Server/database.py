@@ -45,7 +45,6 @@ def getUserEmail(userid):
 def getUnavailableFilm(film_id):
 	db.execute('SELECT row,col FROM tickets WHERE film_id=%s',(film_id,))
 	result=db.fetchall()
-	print(result)
 	return result
 
 def book(userid,film_id,seats,number):
@@ -77,18 +76,19 @@ def getUserTickets(userid):
 	temp=db.fetchall()
 	number=len(temp)
 	for i in range(0,number):
-		dbresult={'film_id':'','cinema_name':'','mv_name':'','hall_id':'','start_time':'','row':'','col':''}
+		dbresult={'film_id':'','cinema_name':'','mv_name':'','hall_id':'','start_time':'','end_time':'','row':'','col':''}
 		dbresult['film_id']=temp[i]['film_id']
 		dbresult['row']=temp[i]['row']
 		dbresult['col']=temp[i]['col']
-		db.execute('SELECT cinema_id,hall_id,mv_name,start_time FROM cinema_info WHERE cinema_id=%s',(temp[i]['film_id'],))
+		db.execute('SELECT cinema_id,hall_id,mv_name,start_time,end_time FROM filmsession WHERE film_id=%s',(temp[i]['film_id'],))
 		temp2=db.fetchone()
 		db.execute('SELECT cinema_name FROM cinema_info WHERE cinema_id=%s',(temp2['cinema_id'],))
-		cinema_name=db.fetchone()[cinema_name]
+		cinema_name=db.fetchone()['cinema_name']
 		dbresult['cinema_name']=cinema_name
 		dbresult['mv_name']=temp2['mv_name']
 		dbresult['hall_id']=temp2['hall_id']
 		dbresult['start_time']=temp2['start_time']
+		dbresult['end_time']=temp2['end_time']
 		result.append(dbresult)
 	return result
 
