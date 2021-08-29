@@ -121,12 +121,12 @@ def getFilmSession():
 	if request.headers['Content-Type'] == "application/json":
 		film_id=request.get_json()['film_id']
 		result=getUnavailableFilm(film_id)
-		available=len(result)
-		if available>0 :
-			finalresult={'errcode':0,'available':available,'result':result}
+		unavailable=len(result)
+		if unavailable>0 :
+			finalresult={'errcode':0,'unavailable':unavailable,'result':result}
 			return json.dumps(finalresult),200
-		elif available==0:
-			finalresult={'errcode':0,'available':available}
+		elif unavailable==0:
+			finalresult={'errcode':0,'unavailable':unavailable}
 			return json.dumps(finalresult),200
 		else:
 			return {'errcode':1,'errmsg':"未知错误"},400
@@ -142,7 +142,12 @@ def bookTickets():
 		film_id=data['film_id']
 		seats=data['seats']
 		result=book(userid,film_id,seats,number)
-		if result:
+		print("result is :",result)
+		if result==-2:
+			return {'errcode':1,'errmsg':"座位已经被占了！"},400
+		elif result==-1:
+			return {'errcode':1,'errmsg':"余额不足"},400
+		elif result:
 			return {'errcode':0,'errmsg':"订票成功"},200
 		else:
 			return {'errcode':1,'errmsg':"订票失败"},400
@@ -214,9 +219,9 @@ def getTickets():
 def searchMv():
 	if request.headers['Content-Type'] == "application/json":
 		mv_name=request.get_json()['mv_name']
-		result=searchByName(mv_name)
+		result,number=searchByName(mv_name)
 		if result:
-			return json.dumps({'errcoe':0,'errmsg':"成功",'tickets':result},cls=DateEncoder),200
+			return json.dumps({'errcoe':0,'errmsg':"成功",'number':number,'tickets':result},cls=DateEncoder),200
 		else:
 			return json.dumps( {'errcoe':1,'errmsg':"失败"}),400
 	else:
