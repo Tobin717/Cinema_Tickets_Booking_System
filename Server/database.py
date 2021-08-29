@@ -83,6 +83,19 @@ def charge(userid,amount):
 	conn.commit()
 	return db.rowcount
 
+def getFilmTickets(number):
+	result=[]
+	temp={'film_id':'','cinema_name':'','mv_name':'','hall_id':'','start_time':''}
+	db.execute('SELECT film_id,cinema_id,hall_id,mv_name,start_time FROM filmsession ORDER BY RAND() LIMIT %s',(number,))
+	dbresult=db.fetchall()
+	for i in range(0,number):
+		db.execute('SELECT cinema_name FROM cinema_info WHERE cinema_id=%s',(dbresult[i]['cinema_id'],))
+		temp['cinema_name']=db.fetchone()['cinema_name']
+		temp['mv_name']=dbresult[i]['mv_name']
+		temp['start_time']=dbresult[i]['start_time']
+		temp['film_id']=dbresult[i]['film_id']
+		result.append(temp)
+	return result
 
 
 def encrypt(passwd):

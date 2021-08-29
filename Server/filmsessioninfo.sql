@@ -1,4 +1,4 @@
-insert into `filmsessioninfo`(`cinema_id`,`hall_id`,`mv_name`,`start_time`,`end_time`)values
+insert into `filmsession`(`cinema_id`,`hall_id`,`mv_name`,`start_time`,`end_time`)values
 ('1','2','绿皮书','2021-08-30 08:50:00','2021-08-30 11:00:00'),
 ('1','1','熔炉','2021-08-30 10:00:00','2021-08-30 12:05:00'),
 ('1','1','疯狂动物城','2021-08-30 13:05:00','2021-08-30 14:54:00'),
