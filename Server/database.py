@@ -94,16 +94,17 @@ def getUserTickets(userid):
 
 def refundUserTickets(userid,film_id,row,col):
 	try:
-		db.execute('SELECT balance FROM userinfo WHERE `userid`=%s', (userid,))
+		db.execute('SELECT balance FROM userinfo WHERE userid=%s', (userid,))
 		balance=db.fetchone()['balance']
-		price=50
-		db.execute('UPDATE userinfo SET balance=%s WHERE userid=%s',(balance+price,userid))
-		db.execute('DELETE FROM tickets WHERE `userid`=%s and `film_id`=%s and `row`=%s and `col`=%s',(userid,film_id,row,col))
+		print("balacne is :",balance)
+		price=50+balance
+		db.execute('UPDATE userinfo SET balance=%s WHERE userid=%s',(price,userid))
+		db.execute('DELETE FROM tickets WHERE film_id=%s and row=%s and col=%s',(film_id,row,col))
 	except Exception as e:
 		conn.rollback()
 	finally:
 		conn.commit()
-	return db.rowcount
+		return db.rowcount
 
 def charge(userid,amount):
 	db.execute('SELECT balance FROM userinfo WHERE `userid`=%s', (userid,))

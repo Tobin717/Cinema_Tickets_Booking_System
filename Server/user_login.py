@@ -71,12 +71,12 @@ def register():
 
 @app.route('/getMvRank',methods=['POST'])
 def getRank():
-	print("getMvRank request accepted!")
+	#print("getMvRank request accepted!")
 	if request.headers['Content-Type'] == "application/json":
-		print("its json!")
+		#print("its json!")
 		number=request.get_json()['number']
-		print("number is :",number)
-		print("number of result is:",len(getMvRank(number)))
+		#print("number is :",number)
+		#print("number of result is:",len(getMvRank(number)))
 		result={'rank':getMvRank(number)};
 		return json.dumps(result),200
 	else:
@@ -86,18 +86,18 @@ def getRank():
 def modifyPwd():
 	print("changePwd request accpted!")
 	if request.headers['Content-Type'] == "application/json":
-		print("its json")
+		#print("its json")
 		data = request.get_json()
 		userid = data['userid']
 		oldpassword = data['oldpassword']
 		newpassword = data['newpassword']
-		print("userid is:",userid)
+		#print("userid is:",userid)
 		result=changePwd(userid,oldpassword,newpassword)
 		if result:
-			print("修改成功！")
+			#print("修改成功！")
 			return {'errcode':0,'errmsg':"修改成功！"},200
 		else:
-			print("修改失败！")
+			#print("修改失败！")
 			return {'errcode':1,'errmsg':"修改失败，请重试！"},400
 	else:
 		return {'errcode':1,'errmsg':"参数错误"},400
@@ -164,10 +164,10 @@ def userTickets():
 		number=len(result)
 		seats={'seats':result}
 		if number>0:
-			finalresult={'errcoe':0,'errmsg':"成功",'number':number,'seats':seats}
+			finalresult={'errcode':0,'errmsg':"成功",'number':number,'seats':seats}
 			return json.dumps(finalresult,cls=DateEncoder),200
 		elif number==0:
-			finalresult={'errcoe':0,'errmsg':"用户无订票",'number':number}
+			finalresult={'errcode':0,'errmsg':"用户无订票",'number':number}
 			return json.dumps(finalresult),200
 		else:
 			return {'errcode':1,'errmsg':"未知错误"},400
@@ -183,12 +183,13 @@ def refundTickets():
 		row=data['row']
 		col=data['col']
 		result=refundUserTickets(userid,film_id,row,col)
+		print(result)
 		if result:
-			return {'errcoe':0,'errmsg':"成功"},200
+			return {'errcode':0,'errmsg':"成功"},200
 		else:
-			return {'errcoe':1,'errmsg':"失败"},400
+			return {'errcode':1,'errmsg':"失败"},400
 	else:
-		return {'errcoe':1,'errmsg':"参数错误"},400
+		return {'errcode':1,'errmsg':"参数错误"},400
 
 @app.route('/userCharge',methods=['POST'])
 def userCharge():
@@ -199,11 +200,11 @@ def userCharge():
 		result=charge(userid,amount)
 		print(result)
 		if result:
-			return {'errcoe':0,'errmsg':"成功"},200
+			return {'errcode':0,'errmsg':"成功"},200
 		else:
-			return {'errcoe':1,'errmsg':"失败"},400
+			return {'errcode':1,'errmsg':"失败"},400
 	else:
-		return {'errcoe':1,'errmsg':"参数错误"},400
+		return {'errcode':1,'errmsg':"参数错误"},400
 
 @app.route('/getTickets',methods=['POST'])
 def getTickets():
@@ -211,11 +212,11 @@ def getTickets():
 		number=request.get_json()['number']
 		result=getFilmTickets(number)
 		if result:
-			return json.dumps({'errcoe':0,'errmsg':"成功",'tickets':result},cls=DateEncoder),200
+			return json.dumps({'errcode':0,'errmsg':"成功",'tickets':result},cls=DateEncoder),200
 		else:
-			return json.dumps( {'errcoe':1,'errmsg':"失败"}),400
+			return json.dumps( {'errcode':1,'errmsg':"失败"}),400
 	else:
-		return json.dumps( {'errcoe':1,'errmsg':"失败"}),400
+		return json.dumps( {'errcode':1,'errmsg':"失败"}),400
 
 @app.route('/searchMv',methods=['POST'])
 def searchMv():
@@ -223,11 +224,11 @@ def searchMv():
 		mv_name=request.get_json()['mv_name']
 		result,number=searchByName(mv_name)
 		if result:
-			return json.dumps({'errcoe':0,'errmsg':"成功",'number':number,'tickets':result},cls=DateEncoder),200
+			return json.dumps({'errcode':0,'errmsg':"成功",'number':number,'tickets':result},cls=DateEncoder),200
 		else:
-			return json.dumps( {'errcoe':1,'errmsg':"失败"}),400
+			return json.dumps( {'errcode':1,'errmsg':"失败"}),400
 	else:
-		return json.dumps( {'errcoe':1,'errmsg':"失败"}),400
+		return json.dumps( {'errcode':1,'errmsg':"失败"}),400
 
 
 if __name__ == '__main__':
