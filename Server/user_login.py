@@ -147,6 +147,8 @@ def bookTickets():
 			return {'errcode':1,'errmsg':"座位已经被占了！"},400
 		elif result==-1:
 			return {'errcode':1,'errmsg':"余额不足"},400
+		elif result==-3:
+			return {'errcode':1,'errmsg':"未知灾难性错误"},400
 		elif result:
 			return {'errcode':0,'errmsg':"订票成功"},200
 		else:
@@ -163,7 +165,7 @@ def userTickets():
 		seats={'seats':result}
 		if number>0:
 			finalresult={'errcoe':0,'errmsg':"成功",'number':number,'seats':seats}
-			return json.dumps(finalresult),200
+			return json.dumps(finalresult,cls=DateEncoder),200
 		elif number==0:
 			finalresult={'errcoe':0,'errmsg':"用户无订票",'number':number}
 			return json.dumps(finalresult),200
