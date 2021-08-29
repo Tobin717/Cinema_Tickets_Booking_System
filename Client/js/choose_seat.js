@@ -68,7 +68,7 @@ function purchase_con(number) {
     xhr.onreadystatechange = function () {
         if (xhr.readyState == 4) {
             alert(xhr.response.errmsg);
-            if (errcode == 0) {
+            if (xhr.response.errcode == 0) {
                 location.href = "myticket.html";
             }
         }

@@ -13,7 +13,7 @@ function onload_myticket() {
     xhr.onreadystatechange = function () {
         if (xhr.readyState == 4) {
             if (xhr.status === 200) {
-                for (var i = 0; i < xhr.response.number; i++) {
+                for (var i = 0; i < Math.min(xhr.response.number, 6); i++) {
                     document.getElementsByClassName("ticket" + (i + 1).toString())[0].innerHTML = xhr.response.seats.seats[i].cinema_name;
                     document.getElementsByClassName("ticket" + (i + 1).toString())[1].innerHTML = xhr.response.seats.seats[i].hall_id;
                     document.getElementsByClassName("ticket" + (i + 1).toString())[2].innerHTML = xhr.response.seats.seats[i].mv_name;
@@ -26,6 +26,31 @@ function onload_myticket() {
                     document.getElementsByClassName("downbutton")[i].disabled = true;
                     document.getElementsByClassName("prize")[i].innerHTML = "";
                 }
+            }
+        }
+    }
+}
+function refund_ticket(number) {
+    var username = getCookie("username");
+    var obj = new Object();
+    obj.userid = username;
+    obj.film_id = number;
+    obj.row = parseInt(number / 7) + 1;
+    obj.col = number % 7 + 1
+    var xhr = new XMLHttpRequest();
+    xhr.responseType = "json";
+    xhr.timeout = 3000;
+    xhr.ontimeout = function () {
+        alert("网络异常");
+    }
+    xhr.open("post", "http://119.23.45.53:8080/refundTickets", true);
+    xhr.setRequestHeader("Content-Type", "application/json");
+    xhr.send(JSON.stringify(obj));
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState == 4) {
+            alert(xhr.response.errmsg);
+            if (xhr.response.errcode == 0) {
+                location.href = "myticket.html";
             }
         }
     }
