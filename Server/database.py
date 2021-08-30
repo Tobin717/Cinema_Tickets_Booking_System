@@ -51,6 +51,7 @@ def book(userid,film_id,seats,number):
 	for i in range(0,number):
 		db.execute('SELECT balance FROM userinfo WHERE `userid`=%s', (userid,))
 		balance=db.fetchone()['balance']
+		print(seats[i]['row'])
 		db.execute('SELECT userid FROM tickets WHERE film_id=%s and row=%s and col=%s',(film_id,seats[i]['row'],seats[i]['col']))
 		if db.rowcount>0:
 			conn.rollback()
